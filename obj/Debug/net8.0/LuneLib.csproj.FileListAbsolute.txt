@@ -1,0 +1,5 @@
+C:\Users\chloe\Documents\My Games\Terraria\tModLoader\ModSources\LuneLib\obj\Debug\net8.0\LuneLib.csproj.AssemblyReference.cache
+C:\Users\chloe\Documents\My Games\Terraria\tModLoader\ModSources\LuneLib\obj\Debug\net8.0\LuneLib.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\chloe\Documents\My Games\Terraria\tModLoader\ModSources\LuneLib\obj\Debug\net8.0\LuneLib.AssemblyInfoInputs.cache
+C:\Users\chloe\Documents\My Games\Terraria\tModLoader\ModSources\LuneLib\obj\Debug\net8.0\LuneLib.AssemblyInfo.cs
+C:\Users\chloe\Documents\My Games\Terraria\tModLoader\ModSources\LuneLib\obj\Debug\net8.0\LuneLib.csproj.CoreCompileInputs.cache
