@@ -22,7 +22,7 @@ namespace LuneLib.Common.NPCs.LuneLibNpc
                 public int LcDepth = 0;
                 public int damageCooldown = 0;
 
-        #endregion
+            #endregion
 
         #endregion
 
