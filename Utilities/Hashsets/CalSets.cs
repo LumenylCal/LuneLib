@@ -26,23 +26,6 @@ namespace LuneLib.Utilities.Hashsets
     public static class CalSets
     {
 
-        //public static void load()
-        //{
-        //    try
-        //    {
-        //        if (LuneLib.instance.CalamityModLoaded)
-        //        {
-        //            load();
-        //        }
-        //    }
-        //    catch (Exception e)
-        //    {
-        //        LuneLib.instance.Logger.Error(
-        //            $"Couldn't load Calamity HashSets! Error message: {e}");
-        //    }
-        //}
-
-
         public static readonly HashSet<int> AbyssalProjectiles;
 
         public static readonly HashSet<int> AbyssalNPCs;

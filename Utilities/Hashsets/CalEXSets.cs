@@ -9,23 +9,6 @@ namespace LuneLib.Utilities.Hashsets
     [JITWhenModsEnabled("CalValEX")]
     public static class CalEXSets
     {
-
-        //public static void load()
-        //{
-        //    try
-        //    {
-        //        if (LuneLib.instance.CalValExLoaded)
-        //        {
-        //            load();
-        //        }
-        //    }
-        //    catch (Exception e)
-        //    {
-        //        LuneLib.instance.Logger.Error($"Couldn't load CalValEX HashSets! Error message: {e}");
-        //    }
-        //}
-
-
         #region Abyssal Npcs
 
         public static readonly HashSet<int> AbyssalNPCs;
