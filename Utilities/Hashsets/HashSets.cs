@@ -8,21 +8,21 @@
             #region HashSetContainsAbyssProj
 
                 public static bool HashSetContainsAbyssProj(int type) =>
-                    ContainsInfAbyssProj(type) || ContainsCalAbyssProj(type) /*|| ContainsVanAbyssProj(type)*/;
+                    ContainsInfAbyssProj(type) || ContainsCalAbyssProj(type) || ContainsVanAbyssProj(type);
 
                 public static bool ContainsInfAbyssProj(int type) => 
                     LuneLib.instance.InfernumModeLoaded && InfSets.AbyssalProjectiles.Contains(type);
                 public static bool ContainsCalAbyssProj(int type) =>
                     LuneLib.instance.CalamityModLoaded && CalSets.AbyssalProjectiles.Contains(type);
-                //public static bool ContainsVanAbyssProj(int type) =>
-                //    VanillaSets.AbyssalProjectiles.Contains(type);
+                public static bool ContainsVanAbyssProj(int type) =>
+                    VanillaSets.AbyssalProjectiles.Contains(type);
 
             #endregion
 
             #region HashSetContainsAbyssalPredator
 
                 public static bool HashSetContainsAbyssalPredator(int type) =>
-                    ContainsCalAbyssalPredator(type) || ContainsInfAbyssalPredator(type) || ContainsCalExAbyssalPredator(type) /*|| /ContainsVanAbyssalPredator(type)*/;
+                    ContainsCalAbyssalPredator(type) || ContainsInfAbyssalPredator(type) || ContainsCalExAbyssalPredator(type) || ContainsVanAbyssalPredator(type);
 
                 public static bool ContainsCalAbyssalPredator(int type) =>
                     LuneLib.instance.CalamityModLoaded && CalSets.AbyssalNPCs.Contains(type);
@@ -30,8 +30,8 @@
                     LuneLib.instance.InfernumModeLoaded && InfSets.AbyssalNPCs.Contains(type);
                 public static bool ContainsCalExAbyssalPredator(int type) =>
                     LuneLib.instance.CalValExLoaded &&  CalEXSets.AbyssalNPCs.Contains(type);
-                //public static bool ContainsVanAbyssalPredator(int type) =>
-                //    VanillaSets.AbyssalNPCs.Contains(type);
+                public static bool ContainsVanAbyssalPredator(int type) =>
+                    VanillaSets.AbyssalNPCs.Contains(type);
 
             #endregion
 
@@ -50,12 +50,12 @@
             #region HashSetContainsAquaticBoss
 
                 public static bool HashSetContainsAquaticBoss(int type) =>
-                    ContainsCalAquaticBoss(type) || ContainsInfAquaticBossProjectile(type) /*|| ContainsVanAquaticBoss(type)*/;
+                    ContainsCalAquaticBoss(type) || ContainsInfAquaticBossProjectile(type) || ContainsVanAquaticBoss(type);
 
                 public static bool ContainsCalAquaticBoss(int type) =>
                     LuneLib.instance.CalamityModLoaded && CalSets.AquaticBosses.Contains(type);
-                //public static bool ContainsVanAquaticBoss(int type) =>
-                //    VanillaSets.AquaticBosses.Contains(type);
+                public static bool ContainsVanAquaticBoss(int type) =>
+                    VanillaSets.AquaticBosses.Contains(type);
 
         #endregion
 

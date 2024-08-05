@@ -1,79 +1,61 @@
-﻿using CalamityMod.Items.Armor.Victide;
-using Microsoft.CodeAnalysis.CSharp.Syntax;
+﻿using System;
 using Terraria.ID;
 using Terraria.ModLoader;
-
-using static LuneLib.Utilities.LuneLibUtils;
 
 namespace LuneLib.Common.Players.LuneLibPlayer
 {
     public class LibPlayerData : ModPlayer
     {
-        #region all my mods debuffs
+        #region All My Mods Debuffs
 
             #region Lunes Worse of Life
-
-                public bool BoilFreeze = false; // inspace debuff
-
+            public bool BoilFreeze = false; // In-space debuff
             #endregion
 
-            #region Calamitas Mommy (Lunes Shitty Mod) this mod is currently private... its just changes id like to my game
-
-                public bool LunesSpiritPet = false; // custom pet
-                public bool WConvert = false; // private but is just for shits and giggles :3
-                public bool LcDepth = false; // my custom crush depth debuff
-                public bool LTOceanH = false; //dw bout it heel
-
-        #endregion
+            #region Calamitas Mommy (Lunes Shitty Mod)
+            public bool LunesSpiritPet = false; // Custom pet
+            public bool WConvert = false; // Private, just for fun
+            public bool LcDepth = false; // Custom crush depth debuff
+            public bool LTOceanH = false; // Unclear use, placeholder
+            #endregion
 
         #endregion
 
-        #region Is wearing armour type?
+        #region Is Wearing Armor Type?
 
-            #region Lead Armour
+            #region Lead Armor
+            public bool WearingFullLead { get; private set; }
+            public bool WearingTwoLeadPieces { get; private set; }
+            public bool WearingOneLeadPiece { get; private set; }
 
-                public static int IsWearingLeadArmor()
+            public int IsWearingLeadArmor()
+            {
+                int leadCount = 0;
+
+                int[] leadArmorIDs = new int[] { ItemID.LeadHelmet, ItemID.LeadChainmail, ItemID.LeadGreaves };
+                for (int i = 0; i < 3; i++)
                 {
-                    var headType = L.armor[0].type;
-                    var chestType = L.armor[1].type;
-                    var legsType = L.armor[2].type;
-
-                    if (headType == ItemID.LeadHelmet && chestType == ItemID.LeadChainmail && legsType == ItemID.LeadGreaves)
+                    if (Array.Exists(leadArmorIDs, id => Player.armor[i].type == id))
                     {
-                        return 1;
+                        leadCount++;
                     }
-                    else if ((headType == ItemID.LeadHelmet || chestType == ItemID.LeadChainmail) && legsType == ItemID.LeadGreaves)
-                    {
-                        return 2;
-                    }
-                    else if (headType == ItemID.LeadHelmet && (chestType == ItemID.LeadChainmail || legsType == ItemID.LeadGreaves))
-                    {
-                        return 2;
-                    }
-                    else if (headType == ItemID.LeadHelmet && legsType == ItemID.LeadGreaves)
-                    {
-                        return 2;
-                    }
-                    else if (headType == ItemID.LeadHelmet || chestType == ItemID.LeadChainmail || legsType == ItemID.LeadGreaves)
-                    {
-                        return 3;
-                    }
-
-                    return 0;
-
                 }
 
-                public static bool WearingFullLead => IsWearingLeadArmor() == 1;
-                public static bool WearingTwoLeadPieces => IsWearingLeadArmor() == 2;
-                public static bool WearingOneLeadPiece => IsWearingLeadArmor() == 3;
+                return leadCount;
+            }
+
+            public override void UpdateEquips()
+            {
+                base.UpdateEquips();
+                int leadCount = IsWearingLeadArmor();
+
+                WearingFullLead = leadCount == 3;
+                WearingTwoLeadPieces = leadCount == 2;
+                WearingOneLeadPiece = leadCount == 1;
+            }
 
             #endregion
 
         #endregion
-
-        public override void PostUpdateEquips()
-        {
-            IsWearingLeadArmor();
-        }
     }
 }
