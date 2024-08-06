@@ -178,3 +178,4 @@ C:\Users\chloe\Documents\My Games\Terraria\tModLoader\ModSources\LuneLib\obj\Deb
 C:\Users\chloe\Documents\My Games\Terraria\tModLoader\ModSources\LuneLib\obj\Debug\net8.0\refint\LuneLib.dll
 C:\Users\chloe\Documents\My Games\Terraria\tModLoader\ModSources\LuneLib\obj\Debug\net8.0\LuneLib.pdb
 C:\Users\chloe\Documents\My Games\Terraria\tModLoader\ModSources\LuneLib\obj\Debug\net8.0\ref\LuneLib.dll
+C:\Users\chloe\Documents\My Games\Terraria\tModLoader\ModSources\LuneLib\bin\Debug\net8.0\InfernumMode.pdb

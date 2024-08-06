@@ -14,7 +14,7 @@ namespace LuneLib.Utilities.PressureCheckFolder
         public override void PostUpdate()
         {
             CheckWaterDepth();
-            Main.NewText($"asdas");
+
         }
 
         private void CheckWaterDepth()
@@ -25,17 +25,20 @@ namespace LuneLib.Utilities.PressureCheckFolder
             {
                 if (!WasDrowningLastFrame)
                 {
-                    CurrentlyInThisPool = Pools.FindPool(Player.position);
+                     CurrentlyInThisPool = Pools.FindPool(Player.Center);
+
+                    Main.NewText($"{CurrentlyInThisPool} {CurrentlyInThisPool.SurfaceY}");
                 }
 
                 if (CurrentlyInThisPool != null)
                 {
                     var poolSurfaceY = CurrentlyInThisPool.SurfaceY;
-
                 }
             }
 
             if (!currentlyDrowning && WasDrowningLastFrame) CurrentlyInThisPool = null;
+
+            WasDrowningLastFrame = currentlyDrowning;
         }
     }
 }

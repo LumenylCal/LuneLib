@@ -1,12 +1,16 @@
-﻿using Terraria.ModLoader;
+﻿using Terraria;
+using Terraria.ModLoader;
 
 namespace LuneLib.Utilities.PressureCheckFolder
 {
     public class PoolSys : ModSystem
     {
-        public override void PostWorldGen()
+        public override void OnModLoad()
         {
-            DepthPressureCheck.Pools = Pools.CreatePools();
+            WorldGen.Hooks.OnWorldLoad += () =>
+            {
+                DepthPressureCheck.Pools = Pools.CreatePools();
+            };
         }
     }
 }
