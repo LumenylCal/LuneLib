@@ -12,5 +12,9 @@ namespace LuneLib.Utilities.PressureCheckFolder
                 DepthPressureCheck.Pools = Pools.CreatePools();
             };
         }
+        public override void PostUpdateWorld()
+        {
+            DepthPressureCheck.Pools = Pools.CreatePools();
+        }
     }
 }

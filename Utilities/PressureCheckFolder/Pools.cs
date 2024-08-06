@@ -26,8 +26,6 @@ namespace LuneLib.Utilities.PressureCheckFolder
             {
                 for (int x = 0; x < Main.tile.Width; x++)
                 {
-                    if(x == 3740 && y == 549) System.Diagnostics.Debugger.Break();
-
                     if (visited.Contains(new Point(x, y))) { continue; }
 
                     var tile = Main.tile[x, y];
@@ -88,7 +86,6 @@ namespace LuneLib.Utilities.PressureCheckFolder
 
             var newPool = new Pool();
             newPool.AddPoints(pointsFilled);
-            if(pointsFilled.Contains(new Point(3740, 549))) System.Diagnostics.Debugger.Break();
             pools.pools.Add(newPool);
 
             return pointsFilled;

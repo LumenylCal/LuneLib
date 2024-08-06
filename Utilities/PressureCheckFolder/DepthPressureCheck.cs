@@ -27,7 +27,7 @@ namespace LuneLib.Utilities.PressureCheckFolder
                 {
                      CurrentlyInThisPool = Pools.FindPool(Player.Center);
 
-                    Main.NewText($"{CurrentlyInThisPool} {CurrentlyInThisPool.SurfaceY}");
+                    Main.NewText($"{CurrentlyInThisPool} {CurrentlyInThisPool.SurfaceY}. player center enter = {Player.Center}");
                 }
 
                 if (CurrentlyInThisPool != null)
