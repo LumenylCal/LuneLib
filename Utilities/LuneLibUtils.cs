@@ -73,10 +73,13 @@ namespace LuneLib.Utilities
             return tiles * 16;
         }
 
-        public static int CounterHelp(int count, int countdownTime)
+        public static int CounterHelp(int countdownTime)
         {
-            count--;
-
+            int count = countdownTime;
+            if (count > 0)
+            {
+                count--;
+            }
             if (count <= 0)
             {
                 count = SecondsToFramesL(countdownTime);

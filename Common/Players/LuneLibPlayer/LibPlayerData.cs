@@ -1,6 +1,7 @@
 ﻿using System;
 using Terraria.ID;
 using Terraria.ModLoader;
+using static LuneLib.Utilities.LuneLibUtils;
 
 namespace LuneLib.Common.Players.LuneLibPlayer
 {
@@ -24,9 +25,9 @@ namespace LuneLib.Common.Players.LuneLibPlayer
         #region Is Wearing Armor Type?
 
             #region Lead Armor
-            public bool WearingFullLead { get; private set; }
-            public bool WearingTwoLeadPieces { get; private set; }
-            public bool WearingOneLeadPiece { get; private set; }
+            public static bool WearingFullLead { get; set; }
+            public static bool WearingTwoLeadPieces { get; set; }
+            public static bool WearingOneLeadPiece { get; set; }
 
             public int IsWearingLeadArmor()
             {
@@ -54,7 +55,7 @@ namespace LuneLib.Common.Players.LuneLibPlayer
                 WearingOneLeadPiece = leadCount == 1;
             }
 
-            #endregion
+        #endregion
 
         #endregion
     }
