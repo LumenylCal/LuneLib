@@ -1,16 +1,9 @@
 ﻿#nullable enable
-using CalamityMod.Waters;
 using Microsoft.Xna.Framework;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Terraria;
-using Terraria.GameContent.Biomes;
-using Terraria.WorldBuilding;
 
-namespace LuneWOL.PressureCheckFolder
+namespace LuneLib.Utilities.PressureCheckFolder
 {
     public class Pools
     {

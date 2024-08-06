@@ -1,7 +1,7 @@
 ﻿using Terraria;
 using Terraria.ModLoader;
 
-namespace LuneWOL.PressureCheckFolder
+namespace LuneLib.Utilities.PressureCheckFolder
 {
     public class DepthPressureFuckery : ModPlayer
     {
