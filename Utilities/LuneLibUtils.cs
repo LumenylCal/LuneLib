@@ -3,6 +3,7 @@ using CalamityMod.BiomeManagers;
 using LuneLib.Common.NPCs.LuneLibNpc;
 using LuneLib.Common.Players.LuneLibPlayer;
 using Terraria;
+using Terraria.GameContent;
 using Terraria.ModLoader;
 using static LuneLib.LuneLib;
 
@@ -16,6 +17,10 @@ namespace LuneLib.Utilities
         /// L is just Main.CurrentPlayer
         /// </summary>
         public static Player L => Main.CurrentPlayer;
+        
+        public static Player VL => VanillaPlayer(VL);
+
+        public static PlayerEyeHelper E => EyePlayer(E);
 
         /// <summary>
         /// N is supposed to be like ExampleMethod("NPC npc" < that) but i have no idea if it works lmfao"
@@ -110,6 +115,8 @@ namespace LuneLib.Utilities
 
         #region player
         public static LibPlayerData LibPlayer(this Player player) => player.GetModPlayer<LibPlayerData>();
+        public static PlayerEyeHelper EyePlayer(this PlayerEyeHelper eyePlayer) => eyePlayer;
+        public static Player VanillaPlayer(this Player VL) => VL;
         #endregion
 
         #region npc

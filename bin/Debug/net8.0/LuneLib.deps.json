@@ -9,6 +9,7 @@
       "LuneLib/1.0.0": {
         "dependencies": {
           "tModLoader.CodeAssist": "0.1.5",
+          "0Harmony": "2.3.3.0",
           "Basic.Reference.Assemblies.Net80": "1.0.0.0",
           "CalamityMod": "0.0.0.0",
           "CalValEX": "0.0.0.0",
@@ -92,6 +93,14 @@
         }
       },
       "tModLoader.CodeAssist/0.1.5": {},
+      "0Harmony/2.3.3.0": {
+        "runtime": {
+          "0Harmony.dll": {
+            "assemblyVersion": "2.3.3.0",
+            "fileVersion": "2.3.3.0"
+          }
+        }
+      },
       "Basic.Reference.Assemblies.Net80/1.0.0.0": {
         "runtime": {
           "Basic.Reference.Assemblies.Net80.dll": {
@@ -968,6 +977,11 @@
       "sha512": "sha512-Sg/jKEg/z5eN+Cdi3/9CU4JfJwvXHVH+UDJf4Lipo26uTa+guLLJXH1XDJNPShTFwKK8jMUYbthINP4QhsgHSA==",
       "path": "tmodloader.codeassist/0.1.5",
       "hashPath": "tmodloader.codeassist.0.1.5.nupkg.sha512"
+    },
+    "0Harmony/2.3.3.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
     },
     "Basic.Reference.Assemblies.Net80/1.0.0.0": {
       "type": "reference",

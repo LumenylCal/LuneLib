@@ -1,1 +1,11 @@
+Configs: {
+	Debug: {
+		Headers.debug101: debug101 Header
+		DisplayName: Debug
 
+		asd: {
+			Label: asd
+			Tooltip: ""
+		}
+	}
+}
