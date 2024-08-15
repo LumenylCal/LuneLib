@@ -57,7 +57,6 @@ namespace LuneLib.Utilities.Hashsets
                     NPCID.GoldSeahorse,
                     NPCID.GreenJellyfish,
                     NPCID.PinkJellyfish,
-                    NPCID.Seagull,
                     NPCID.SeaSnail,
                     NPCID.SeaTurtle,
                     NPCID.Seahorse,
@@ -76,6 +75,8 @@ namespace LuneLib.Utilities.Hashsets
                     NPCID.Sharkron2,
                     NPCID.Squid,
                     NPCID.CrimsonGoldfish,
+                    NPCID.Goldfish,
+                    NPCID.GoldfishWalker,
 
                 #endregion
 

@@ -13,7 +13,7 @@ namespace LuneLib.Common.NPCs.LuneLibNpc
 
             #region Lunes Worse of Life
 
-                public int BoilFreeze = 0;
+                //public int BoilFreeze = 0;
 
             #endregion
 
@@ -26,13 +26,13 @@ namespace LuneLib.Common.NPCs.LuneLibNpc
 
         #endregion
 
-        public override void PostAI(NPC npc)
-        {
-            if (BoilFreeze > 0)
-                BoilFreeze--;
+        //public override void PostAI(NPC npc)
+        //{
+        //    if (BoilFreeze > 0)
+        //        BoilFreeze--;
             
-            if (LcDepth > 0)
-                LcDepth--;
-        }
+        //    if (LcDepth > 0)
+        //        LcDepth--;
+        //}
     }
 }

@@ -5,6 +5,7 @@ using LuneLib.Common.Players.LuneLibPlayer;
 using Terraria;
 using Terraria.GameContent;
 using Terraria.ModLoader;
+
 using static LuneLib.LuneLib;
 
 namespace LuneLib.Utilities
@@ -17,8 +18,25 @@ namespace LuneLib.Utilities
         /// L is just Main.CurrentPlayer
         /// </summary>
         public static Player L => Main.CurrentPlayer;
+
+        /// <summary>
+        /// Clientsided
+        /// </summary>
+        public static Player LCP = Main.clientPlayer;
         
+        /// <summary>
+        /// Local Player
+        /// </summary>
+        public static Player LP = Main.LocalPlayer;
+
+        /// <summary>
+        /// Library Player. Use this for variables.
+        /// </summary>
+        public static LibPlayerData LBP = LibPlayer(L);
+
         public static Player VL => VanillaPlayer(VL);
+
+        public static Item LI => GetCurrentItem();
 
         public static PlayerEyeHelper E => EyePlayer(E);
 
@@ -31,7 +49,6 @@ namespace LuneLib.Utilities
         /// should be able to be used like "if (LTSE && otherstuffhere)" so if the player name is correct we proceed
         /// </summary>
         public static bool LTSE => LuneTheSeaEmpress(L);
-
 
         public static bool ZoneOcean => L.ZoneBeach;
 
@@ -69,6 +86,17 @@ namespace LuneLib.Utilities
                 if (npc.active)
                 {
                     return npc;
+                }
+            }
+            return null;
+        }
+        public static Item GetCurrentItem()
+        {
+            foreach (var item in Main.item)
+            {
+                if (item.value > 0)
+                {
+                    return item;
                 }
             }
             return null;
@@ -270,5 +298,6 @@ namespace LuneLib.Utilities
         }
 
         #endregion
+
     }
 }

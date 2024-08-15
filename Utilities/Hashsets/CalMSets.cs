@@ -7,23 +7,6 @@ namespace LuneLib.Utilities.Hashsets
     [JITWhenModsEnabled("CalamitasMommy")]
     public static class CalMSets
     {
-
-        //public static void load()
-        //{
-        //    try
-        //    {
-        //        if (LuneLib.instance.CalamitasMommyLoaded)
-        //        {
-        //            load();
-        //        }
-        //    }
-        //    catch (Exception e)
-        //    {
-        //        LuneLib.instance.Logger.Error(
-        //            $"Couldn't load CalM HashSets! Error message: {e}");
-        //    }
-        //}
-
         private static int tenebrisTileID;
 
         public static readonly HashSet<int> IsAquaticTile;

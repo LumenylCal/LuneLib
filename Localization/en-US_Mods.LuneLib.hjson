@@ -4,7 +4,12 @@ Configs: {
 		DisplayName: Debug
 
 		asd: {
-			Label: asd
+			Label: EC
+			Tooltip: Eye
+		}
+
+		TargetDistanceAirShare: {
+			Label: Target Distance Air Share
 			Tooltip: ""
 		}
 	}

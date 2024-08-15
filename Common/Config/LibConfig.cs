@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel;
 using Terraria.ModLoader.Config;
 
-namespace LuneWOL.Config
+namespace LuneLib.Common.Config
 {
     public class Debug : ModConfig
     {
@@ -11,10 +11,14 @@ namespace LuneWOL.Config
 
         [DefaultValue(false)]
         public bool asd { get; set; }
+        
+        [DefaultValue(0)]
+        [Range(-1, int.MaxValue)]
+        public int TargetDistanceAirShare { get; set; }
 
         public override void OnLoaded()
         {
-            LuneLib.LuneLib.debug = this;
+            LuneLib.debug = this;
         }
     }
 }

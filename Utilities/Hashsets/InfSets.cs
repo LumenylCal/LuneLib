@@ -16,23 +16,6 @@ namespace LuneLib.Utilities.Hashsets
     [JITWhenModsEnabled("InfernumMode")]
     public static class InfSets
     {
-
-        //public static void load()
-        //{
-        //    try
-        //    {
-        //        if (LuneLib.instance.InfernumModeLoaded)
-        //        {
-        //            load();
-        //        }
-        //    }
-        //    catch (Exception e)
-        //    {
-        //        LuneLib.instance.Logger.Error(
-        //            $"Couldn't load Infernum HashSets! Error message: {e}");
-        //    }
-        //}
-
         public static readonly HashSet<int> AbyssalProjectiles;
 
         public static readonly HashSet<int> AbyssalNPCs;

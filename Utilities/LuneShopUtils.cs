@@ -1,10 +1,11 @@
 ﻿using System;
 using Terraria;
+using Terraria.GameContent.Personalities;
 using Terraria.ModLoader;
 
-namespace LuneDyeTrader.Utilities
+namespace LuneLib.Utilities
 {
-    public static class AlchemistHelper
+    public static class LuneShopUtils
     {
         public static NPCShop AddModItemToShop(this NPCShop shop, Mod mod, string itemName, int price)
         {
@@ -17,6 +18,7 @@ namespace LuneDyeTrader.Utilities
             }
             return shop;
         }
+
         public static NPCShop AddModItemToShop(this NPCShop shop, Mod mod, string itemName, int price, params Condition[] condition)
         {
             if (mod != null)
@@ -28,6 +30,7 @@ namespace LuneDyeTrader.Utilities
             }
             return shop;
         }
+
         public static NPCShop AddModItemToShop(this NPCShop shop, Mod mod, string itemName, int price, Func<bool> predicate)
         {
             if (mod != null)
@@ -39,11 +42,13 @@ namespace LuneDyeTrader.Utilities
             }
             return shop;
         }
+
         public static NPCShop AddModItemToShop<T>(this NPCShop shop, int price) where T : ModItem
         {
             shop.Add(new Item(ModContent.ItemType<T>()) { shopCustomPrice = price });
             return shop;
         }
+
         public static NPCShop AddModItemToShop<T>(this NPCShop shop, int price, params Condition[] condition) where T : ModItem
         {
             shop.Add(new Item(ModContent.ItemType<T>()) { shopCustomPrice = price }, condition);
@@ -59,15 +64,9 @@ namespace LuneDyeTrader.Utilities
         {
             Shop = shop;
             visible = false;
-            //NPCLoader.OnChatButtonClicked(firstButton: true);
             NPC npc = Main.npc[Main.LocalPlayer.talkNPC];
             string _ = "";
             npc.ModNPC.SetChatButtons(ref _, ref _);
-            //Main.playerInventory = true;
-            //Main.stackSplit = 9999;
-            //Main.npcChatText = "";
-            //Main.SetNPCShopIndex(1);
-            //Main.instance.shop[Main.npcShop].SetupShop(Shop, npc);
         }
     }
 }

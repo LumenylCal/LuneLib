@@ -5,7 +5,7 @@ using Terraria.GameContent;
 using static Terraria.GameContent.PlayerEyeHelper;
 using static LuneLib.Utilities.LuneLibUtils;
 using System;
-using LuneWOL.Config;
+using LuneLib.Common.Config;
 
 namespace LuneLib
 {
