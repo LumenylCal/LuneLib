@@ -1,3 +1,0 @@
-doesnt stack headcoverd
-
-walls space issue skill issue

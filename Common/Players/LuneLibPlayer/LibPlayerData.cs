@@ -16,16 +16,12 @@ namespace LuneLib.Common.Players.LuneLibPlayer
     {
 
         #region LuneHeadCovered
+
             public override void PostUpdate()
             {
                 float value = 0f;
                 float amount = 0.1f;
-                if (Player.LibPlayer().LWaterEyes && Player.whoAmI == Main.myPlayer)
-		        {
-                    value = 1f;
-			        amount = 0.1f;
-		        }
-                else if (Player.LibPlayer().LStormEyeCovered && Player.whoAmI == Main.myPlayer)
+                if (Player.LibPlayer().LStormEyeCovered && Player.whoAmI == Main.myPlayer)
 		        {
                     value = 0.8f;
 			        amount = 0.1f;
@@ -37,6 +33,7 @@ namespace LuneLib.Common.Players.LuneLibPlayer
 		        }
             	ScreenObstruction.screenObstruction = MathHelper.Lerp(ScreenObstruction.screenObstruction, value, amount);
             }
+
         #endregion
 
 
