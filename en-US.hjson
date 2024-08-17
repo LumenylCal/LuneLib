@@ -1,0 +1,30 @@
+Mods: {
+	LuneLib: {
+		Configs: {
+			Debug: {
+				DisplayName: Debug
+				Headers.debug101: debug101 Header
+
+				asd: {
+					Label: asd
+					Tooltip: ""
+				}
+
+				TargetDistanceAirShare: {
+					Label: Target Distance Air Share
+					Tooltip: ""
+				}
+
+				Eyes: {
+					Label: Eyes
+					Tooltip: ""
+				}
+
+				DebugMessages: {
+					Label: Debug Messages
+					Tooltip: ""
+				}
+			}
+		}
+	}
+}

@@ -8,6 +8,10 @@
 	</PropertyGroup>
 
 	<ItemGroup>
+	  <None Remove="localization\Mods.LuneLib.Status.Death.hjson" />
+	</ItemGroup>
+
+	<ItemGroup>
 		<Reference Include="CalValEX">
 			<HintPath>..\..\ModReader\CalValEX\CalValEX.dll</HintPath>
 		</Reference>

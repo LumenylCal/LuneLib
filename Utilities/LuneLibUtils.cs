@@ -4,6 +4,7 @@ using LuneLib.Common.NPCs.LuneLibNpc;
 using LuneLib.Common.Players.LuneLibPlayer;
 using Terraria;
 using Terraria.GameContent;
+using Terraria.Localization;
 using Terraria.ModLoader;
 
 using static LuneLib.LuneLib;
@@ -28,11 +29,6 @@ namespace LuneLib.Utilities
         /// Local Player
         /// </summary>
         public static Player LP = Main.LocalPlayer;
-
-        /// <summary>
-        /// Library Player. Use this for variables.
-        /// </summary>
-        public static LibPlayerData LBP = LibPlayer(L);
 
         public static Player VL => VanillaPlayer(VL);
 
@@ -79,6 +75,12 @@ namespace LuneLib.Utilities
         #endregion
 
         #region help
+
+        public static LocalizedText GetText(string key)
+        {
+            return Language.GetOrRegister("Mods.LuneLib." + key);
+        }
+
         public static NPC GetCurrentNPC()
         {
             foreach (var npc in Main.npc)
@@ -142,7 +144,7 @@ namespace LuneLib.Utilities
         #endregion
 
         #region player
-        public static LibPlayerData LibPlayer(this Player player) => player.GetModPlayer<LibPlayerData>();
+        public static LibPlayer LibPlayer(this Player player) => player.GetModPlayer<LibPlayer>();
         public static PlayerEyeHelper EyePlayer(this PlayerEyeHelper eyePlayer) => eyePlayer;
         public static Player VanillaPlayer(this Player VL) => VL;
         #endregion

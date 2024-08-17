@@ -56,11 +56,9 @@ namespace LuneLib
 
         private void PlayerEyeHelper_SetStateByPlayerInfo(Terraria.GameContent.On_PlayerEyeHelper.orig_SetStateByPlayerInfo orig, ref PlayerEyeHelper self, Player player)
         {
-            // Call the original method
             orig(ref self, player);
 
-            // Modify the eye state if debug.asd is true
-            if (debug.asd == true && LTSE)
+            if (debug.Eyes == true && LTSE)
             {
                 try
                 {

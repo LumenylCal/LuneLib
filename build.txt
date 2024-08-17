@@ -1,5 +1,5 @@
 displayName = LuneLib
 author = Lune
-version = 1.2.2
+version = 1.2.4
 weakReferences = CalamityMod, InfernumMode, CalValEX, ThoriumMod
 homepage = https://discord.com/invite/FwmGf6vBu2

@@ -3,48 +3,64 @@
   "WorkspaceRootPath": "C:\\Users\\chloe\\Documents\\My Games\\Terraria\\tModLoader\\ModSources\\LuneLib\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{47BBE128-526C-4B0A-A3B8-72A6730C616B}|LuneLib.csproj|c:\\users\\chloe\\documents\\my games\\terraria\\tmodloader\\modsources\\lunelib\\common\\players\\lunelibplayer\\libplayerdata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{47BBE128-526C-4B0A-A3B8-72A6730C616B}|LuneLib.csproj|solutionrelative:common\\players\\lunelibplayer\\libplayerdata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{47BBE128-526C-4B0A-A3B8-72A6730C616B}|LuneLib.csproj|c:\\users\\chloe\\documents\\my games\\terraria\\tmodloader\\modsources\\lunelib\\utilities\\luneshoputils.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{47BBE128-526C-4B0A-A3B8-72A6730C616B}|LuneLib.csproj|solutionrelative:utilities\\luneshoputils.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{47BBE128-526C-4B0A-A3B8-72A6730C616B}|LuneLib.csproj|c:\\users\\chloe\\documents\\my games\\terraria\\tmodloader\\modsources\\lunelib\\utilities\\lunelibutils.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{47BBE128-526C-4B0A-A3B8-72A6730C616B}|LuneLib.csproj|solutionrelative:utilities\\lunelibutils.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{47BBE128-526C-4B0A-A3B8-72A6730C616B}|LuneLib.csproj|c:\\users\\chloe\\documents\\my games\\terraria\\tmodloader\\modsources\\lunelib\\build.txt||{8B382828-6202-11D1-8870-0000F87579D2}",
-      "RelativeMoniker": "D:0:0:{47BBE128-526C-4B0A-A3B8-72A6730C616B}|LuneLib.csproj|solutionrelative:build.txt||{8B382828-6202-11D1-8870-0000F87579D2}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{47BBE128-526C-4B0A-A3B8-72A6730C616B}|LuneLib.csproj|c:\\users\\chloe\\documents\\my games\\terraria\\tmodloader\\modsources\\lunelib\\bugs.txt||{8B382828-6202-11D1-8870-0000F87579D2}",
-      "RelativeMoniker": "D:0:0:{47BBE128-526C-4B0A-A3B8-72A6730C616B}|LuneLib.csproj|solutionrelative:bugs.txt||{8B382828-6202-11D1-8870-0000F87579D2}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{47BBE128-526C-4B0A-A3B8-72A6730C616B}|LuneLib.csproj|c:\\users\\chloe\\documents\\my games\\terraria\\tmodloader\\modsources\\lunelib\\common\\npcs\\lunelibnpc\\libnpcdata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{47BBE128-526C-4B0A-A3B8-72A6730C616B}|LuneLib.csproj|solutionrelative:common\\npcs\\lunelibnpc\\libnpcdata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{47BBE128-526C-4B0A-A3B8-72A6730C616B}|LuneLib.csproj|c:\\users\\chloe\\documents\\my games\\terraria\\tmodloader\\modsources\\lunelib\\lunelib.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{47BBE128-526C-4B0A-A3B8-72A6730C616B}|LuneLib.csproj|solutionrelative:lunelib.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{47BBE128-526C-4B0A-A3B8-72A6730C616B}|LuneLib.csproj|c:\\users\\chloe\\documents\\my games\\terraria\\tmodloader\\modsources\\lunelib\\common\\players\\lunelibplayer\\libplayerhooks.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{47BBE128-526C-4B0A-A3B8-72A6730C616B}|LuneLib.csproj|solutionrelative:common\\players\\lunelibplayer\\libplayerhooks.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{47BBE128-526C-4B0A-A3B8-72A6730C616B}|LuneLib.csproj|c:\\users\\chloe\\documents\\my games\\terraria\\tmodloader\\modsources\\lunelib\\common\\systems\\luneairshare.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{47BBE128-526C-4B0A-A3B8-72A6730C616B}|LuneLib.csproj|solutionrelative:common\\systems\\luneairshare.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{47BBE128-526C-4B0A-A3B8-72A6730C616B}|LuneLib.csproj|c:\\users\\chloe\\documents\\my games\\terraria\\tmodloader\\modsources\\lunelib\\utilities\\lunelibutils.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{47BBE128-526C-4B0A-A3B8-72A6730C616B}|LuneLib.csproj|solutionrelative:utilities\\lunelibutils.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{47BBE128-526C-4B0A-A3B8-72A6730C616B}|LuneLib.csproj|c:\\users\\chloe\\documents\\my games\\terraria\\tmodloader\\modsources\\lunelib\\common\\config\\libconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{47BBE128-526C-4B0A-A3B8-72A6730C616B}|LuneLib.csproj|solutionrelative:common\\config\\libconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{47BBE128-526C-4B0A-A3B8-72A6730C616B}|LuneLib.csproj|c:\\users\\chloe\\documents\\my games\\terraria\\tmodloader\\modsources\\lunelib\\localization\\en-us\\mods.lunelib.config.debug.hjson||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{47BBE128-526C-4B0A-A3B8-72A6730C616B}|LuneLib.csproj|solutionrelative:localization\\en-us\\mods.lunelib.config.debug.hjson||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{47BBE128-526C-4B0A-A3B8-72A6730C616B}|LuneLib.csproj|c:\\users\\chloe\\documents\\my games\\terraria\\tmodloader\\modsources\\lunelib\\common\\players\\lunelibplayer\\libplayerdata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{47BBE128-526C-4B0A-A3B8-72A6730C616B}|LuneLib.csproj|solutionrelative:common\\players\\lunelibplayer\\libplayerdata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{47BBE128-526C-4B0A-A3B8-72A6730C616B}|LuneLib.csproj|c:\\users\\chloe\\documents\\my games\\terraria\\tmodloader\\modsources\\lunelib\\common\\players\\lsi.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{47BBE128-526C-4B0A-A3B8-72A6730C616B}|LuneLib.csproj|solutionrelative:common\\players\\lsi.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{47BBE128-526C-4B0A-A3B8-72A6730C616B}|LuneLib.csproj|c:\\users\\chloe\\documents\\my games\\terraria\\tmodloader\\modsources\\lunelib\\common\\players\\lunelibplayer\\libplayermiscmethods.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{47BBE128-526C-4B0A-A3B8-72A6730C616B}|LuneLib.csproj|solutionrelative:common\\players\\lunelibplayer\\libplayermiscmethods.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{47BBE128-526C-4B0A-A3B8-72A6730C616B}|LuneLib.csproj|c:\\users\\chloe\\documents\\my games\\terraria\\tmodloader\\modsources\\lunelib\\localization\\en-us\\mods.lunelib.status.death.hjson||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{47BBE128-526C-4B0A-A3B8-72A6730C616B}|LuneLib.csproj|solutionrelative:localization\\en-us\\mods.lunelib.status.death.hjson||{8B382828-6202-11D1-8870-0000F87579D2}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{47BBE128-526C-4B0A-A3B8-72A6730C616B}|LuneLib.csproj|c:\\users\\chloe\\documents\\my games\\terraria\\tmodloader\\modsources\\lunelib\\utilities\\hashsets\\calmsets.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{47BBE128-526C-4B0A-A3B8-72A6730C616B}|LuneLib.csproj|solutionrelative:utilities\\hashsets\\calmsets.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{47BBE128-526C-4B0A-A3B8-72A6730C616B}|LuneLib.csproj|c:\\users\\chloe\\documents\\my games\\terraria\\tmodloader\\modsources\\lunelib\\localization\\en-us_mods.lunelib.hjson||{8B382828-6202-11D1-8870-0000F87579D2}",
-      "RelativeMoniker": "D:0:0:{47BBE128-526C-4B0A-A3B8-72A6730C616B}|LuneLib.csproj|solutionrelative:localization\\en-us_mods.lunelib.hjson||{8B382828-6202-11D1-8870-0000F87579D2}"
+      "AbsoluteMoniker": "D:0:0:{47BBE128-526C-4B0A-A3B8-72A6730C616B}|LuneLib.csproj|c:\\users\\chloe\\documents\\my games\\terraria\\tmodloader\\modsources\\lunelib\\common\\players\\lunelibplayer\\libplayersounds.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{47BBE128-526C-4B0A-A3B8-72A6730C616B}|LuneLib.csproj|solutionrelative:common\\players\\lunelibplayer\\libplayersounds.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{47BBE128-526C-4B0A-A3B8-72A6730C616B}|LuneLib.csproj|c:\\users\\chloe\\documents\\my games\\terraria\\tmodloader\\modsources\\lunelib\\common\\npcs\\lunelibnpc\\libnpcdata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{47BBE128-526C-4B0A-A3B8-72A6730C616B}|LuneLib.csproj|solutionrelative:common\\npcs\\lunelibnpc\\libnpcdata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{47BBE128-526C-4B0A-A3B8-72A6730C616B}|LuneLib.csproj|c:\\users\\chloe\\documents\\my games\\terraria\\tmodloader\\modsources\\lunelib\\build.txt||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{47BBE128-526C-4B0A-A3B8-72A6730C616B}|LuneLib.csproj|solutionrelative:build.txt||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{47BBE128-526C-4B0A-A3B8-72A6730C616B}|LuneLib.csproj|c:\\users\\chloe\\documents\\my games\\terraria\\tmodloader\\modsources\\lunelib\\utilities\\luneshoputils.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{47BBE128-526C-4B0A-A3B8-72A6730C616B}|LuneLib.csproj|solutionrelative:utilities\\luneshoputils.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{47BBE128-526C-4B0A-A3B8-72A6730C616B}|LuneLib.csproj|c:\\users\\chloe\\documents\\my games\\terraria\\tmodloader\\modsources\\lunelib\\utilities\\hashsets\\calexsets.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -97,30 +113,31 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 0,
               "Title": "LuneLib.cs",
               "DocumentMoniker": "C:\\Users\\chloe\\Documents\\My Games\\Terraria\\tModLoader\\ModSources\\LuneLib\\LuneLib.cs",
               "RelativeDocumentMoniker": "LuneLib.cs",
               "ToolTip": "C:\\Users\\chloe\\Documents\\My Games\\Terraria\\tModLoader\\ModSources\\LuneLib\\LuneLib.cs",
               "RelativeToolTip": "LuneLib.cs",
-              "ViewState": "AQIAABQAAAAAAAAAAAAQwAcAAAAcAAAA",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAsAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-08-08T09:42:46.676Z",
-              "IsPinned": true
+              "IsPinned": true,
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 6,
               "Title": "LibPlayerData.cs",
               "DocumentMoniker": "C:\\Users\\chloe\\Documents\\My Games\\Terraria\\tModLoader\\ModSources\\LuneLib\\Common\\Players\\LuneLibPlayer\\LibPlayerData.cs",
               "RelativeDocumentMoniker": "Common\\Players\\LuneLibPlayer\\LibPlayerData.cs",
               "ToolTip": "C:\\Users\\chloe\\Documents\\My Games\\Terraria\\tModLoader\\ModSources\\LuneLib\\Common\\Players\\LuneLibPlayer\\LibPlayerData.cs",
               "RelativeToolTip": "Common\\Players\\LuneLibPlayer\\LibPlayerData.cs",
-              "ViewState": "AgIAAAwAAAAAAAAAAAAAABkAAAAfAAAAAAAAAA==",
+              "ViewState": "AgIAAA0AAAAAAAAAAAAAABYAAAAcAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-08-05T22:50:12.414Z",
               "IsPinned": true,
@@ -132,43 +149,98 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "bugs.txt",
-              "DocumentMoniker": "C:\\Users\\chloe\\Documents\\My Games\\Terraria\\tModLoader\\ModSources\\LuneLib\\bugs.txt",
-              "RelativeDocumentMoniker": "bugs.txt",
-              "ToolTip": "C:\\Users\\chloe\\Documents\\My Games\\Terraria\\tModLoader\\ModSources\\LuneLib\\bugs.txt",
-              "RelativeToolTip": "bugs.txt",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAvAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003109|",
-              "WhenOpened": "2024-08-15T21:08:04.117Z"
+              "DocumentIndex": 9,
+              "Title": "Mods.LuneLib.Status.Death.hjson",
+              "DocumentMoniker": "C:\\Users\\chloe\\Documents\\My Games\\Terraria\\tModLoader\\ModSources\\LuneLib\\Localization\\en-US\\Mods.LuneLib.Status.Death.hjson",
+              "RelativeDocumentMoniker": "Localization\\en-US\\Mods.LuneLib.Status.Death.hjson",
+              "ToolTip": "C:\\Users\\chloe\\Documents\\My Games\\Terraria\\tModLoader\\ModSources\\LuneLib\\Localization\\en-US\\Mods.LuneLib.Status.Death.hjson",
+              "RelativeToolTip": "Localization\\en-US\\Mods.LuneLib.Status.Death.hjson",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAsAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2024-08-16T23:38:18.951Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "LibPlayerMiscMethods.cs",
+              "DocumentMoniker": "C:\\Users\\chloe\\Documents\\My Games\\Terraria\\tModLoader\\ModSources\\LuneLib\\Common\\Players\\LuneLibPlayer\\LibPlayerMiscMethods.cs",
+              "RelativeDocumentMoniker": "Common\\Players\\LuneLibPlayer\\LibPlayerMiscMethods.cs",
+              "ToolTip": "C:\\Users\\chloe\\Documents\\My Games\\Terraria\\tModLoader\\ModSources\\LuneLib\\Common\\Players\\LuneLibPlayer\\LibPlayerMiscMethods.cs",
+              "RelativeToolTip": "Common\\Players\\LuneLibPlayer\\LibPlayerMiscMethods.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAA0AAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-16T23:20:07.777Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "LibPlayerHooks.cs",
+              "DocumentMoniker": "C:\\Users\\chloe\\Documents\\My Games\\Terraria\\tModLoader\\ModSources\\LuneLib\\Common\\Players\\LuneLibPlayer\\LibPlayerHooks.cs",
+              "RelativeDocumentMoniker": "Common\\Players\\LuneLibPlayer\\LibPlayerHooks.cs",
+              "ToolTip": "C:\\Users\\chloe\\Documents\\My Games\\Terraria\\tModLoader\\ModSources\\LuneLib\\Common\\Players\\LuneLibPlayer\\LibPlayerHooks.cs",
+              "RelativeToolTip": "Common\\Players\\LuneLibPlayer\\LibPlayerHooks.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAABAAAAAgAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-16T23:19:15.926Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "LibPlayerSounds.cs",
+              "DocumentMoniker": "C:\\Users\\chloe\\Documents\\My Games\\Terraria\\tModLoader\\ModSources\\LuneLib\\Common\\Players\\LuneLibPlayer\\LibPlayerSounds.cs",
+              "RelativeDocumentMoniker": "Common\\Players\\LuneLibPlayer\\LibPlayerSounds.cs",
+              "ToolTip": "C:\\Users\\chloe\\Documents\\My Games\\Terraria\\tModLoader\\ModSources\\LuneLib\\Common\\Players\\LuneLibPlayer\\LibPlayerSounds.cs",
+              "RelativeToolTip": "Common\\Players\\LuneLibPlayer\\LibPlayerSounds.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-16T23:18:50.612Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 7,
+              "Title": "LSI.cs",
+              "DocumentMoniker": "C:\\Users\\chloe\\Documents\\My Games\\Terraria\\tModLoader\\ModSources\\LuneLib\\Common\\Players\\LSI.cs",
+              "RelativeDocumentMoniker": "Common\\Players\\LSI.cs",
+              "ToolTip": "C:\\Users\\chloe\\Documents\\My Games\\Terraria\\tModLoader\\ModSources\\LuneLib\\Common\\Players\\LSI.cs",
+              "RelativeToolTip": "Common\\Players\\LSI.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAUAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-16T16:57:53.159Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
               "Title": "LuneAirShare.cs",
               "DocumentMoniker": "C:\\Users\\chloe\\Documents\\My Games\\Terraria\\tModLoader\\ModSources\\LuneLib\\Common\\Systems\\LuneAirShare.cs",
               "RelativeDocumentMoniker": "Common\\Systems\\LuneAirShare.cs",
               "ToolTip": "C:\\Users\\chloe\\Documents\\My Games\\Terraria\\tModLoader\\ModSources\\LuneLib\\Common\\Systems\\LuneAirShare.cs",
               "RelativeToolTip": "Common\\Systems\\LuneAirShare.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAAAAAAA",
+              "ViewState": "AgIAAA4AAAAAAAAAAAAgwCIAAAAUAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-13T23:21:58.297Z"
+              "WhenOpened": "2024-08-13T23:21:58.297Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "en-US_Mods.LuneLib.hjson",
-              "DocumentMoniker": "C:\\Users\\chloe\\Documents\\My Games\\Terraria\\tModLoader\\ModSources\\LuneLib\\Localization\\en-US_Mods.LuneLib.hjson",
-              "RelativeDocumentMoniker": "Localization\\en-US_Mods.LuneLib.hjson",
-              "ToolTip": "C:\\Users\\chloe\\Documents\\My Games\\Terraria\\tModLoader\\ModSources\\LuneLib\\Localization\\en-US_Mods.LuneLib.hjson",
-              "RelativeToolTip": "Localization\\en-US_Mods.LuneLib.hjson",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAAAPAAAA",
+              "DocumentIndex": 5,
+              "Title": "Mods.LuneLib.Config.Debug.hjson",
+              "DocumentMoniker": "C:\\Users\\chloe\\Documents\\My Games\\Terraria\\tModLoader\\ModSources\\LuneLib\\Localization\\en-US\\Mods.LuneLib.Config.Debug.hjson",
+              "RelativeDocumentMoniker": "Localization\\en-US\\Mods.LuneLib.Config.Debug.hjson",
+              "ToolTip": "C:\\Users\\chloe\\Documents\\My Games\\Terraria\\tModLoader\\ModSources\\LuneLib\\Localization\\en-US\\Mods.LuneLib.Config.Debug.hjson",
+              "RelativeToolTip": "Localization\\en-US\\Mods.LuneLib.Config.Debug.hjson",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAADAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2024-08-13T23:18:04.6Z"
+              "WhenOpened": "2024-08-13T23:18:04.6Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 17,
               "Title": "InfSets.cs",
               "DocumentMoniker": "C:\\Users\\chloe\\Documents\\My Games\\Terraria\\tModLoader\\ModSources\\LuneLib\\Utilities\\Hashsets\\InfSets.cs",
               "RelativeDocumentMoniker": "Utilities\\Hashsets\\InfSets.cs",
@@ -180,7 +252,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 18,
               "Title": "VanillaSets.cs",
               "DocumentMoniker": "C:\\Users\\chloe\\Documents\\My Games\\Terraria\\tModLoader\\ModSources\\LuneLib\\Utilities\\Hashsets\\VanillaSets.cs",
               "RelativeDocumentMoniker": "Utilities\\Hashsets\\VanillaSets.cs",
@@ -192,32 +264,33 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "LuneLibUtils.cs",
               "DocumentMoniker": "C:\\Users\\chloe\\Documents\\My Games\\Terraria\\tModLoader\\ModSources\\LuneLib\\Utilities\\LuneLibUtils.cs",
               "RelativeDocumentMoniker": "Utilities\\LuneLibUtils.cs",
               "ToolTip": "C:\\Users\\chloe\\Documents\\My Games\\Terraria\\tModLoader\\ModSources\\LuneLib\\Utilities\\LuneLibUtils.cs",
               "RelativeToolTip": "Utilities\\LuneLibUtils.cs",
-              "ViewState": "AgIAADMAAAAAAAAAAAAmwJgAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAEwAAAAAAAAAAAAQwAoAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-08-09T20:52:41.976Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 10,
               "Title": "CalMSets.cs",
               "DocumentMoniker": "C:\\Users\\chloe\\Documents\\My Games\\Terraria\\tModLoader\\ModSources\\LuneLib\\Utilities\\Hashsets\\CalMSets.cs",
               "RelativeDocumentMoniker": "Utilities\\Hashsets\\CalMSets.cs",
               "ToolTip": "C:\\Users\\chloe\\Documents\\My Games\\Terraria\\tModLoader\\ModSources\\LuneLib\\Utilities\\Hashsets\\CalMSets.cs",
               "RelativeToolTip": "Utilities\\Hashsets\\CalMSets.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAAFAAAA",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-08T23:20:34.091Z"
+              "WhenOpened": "2024-08-08T23:20:34.091Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 14,
               "Title": "LuneShopUtils.cs",
               "DocumentMoniker": "C:\\Users\\chloe\\Documents\\My Games\\Terraria\\tModLoader\\ModSources\\LuneLib\\Utilities\\LuneShopUtils.cs",
               "RelativeDocumentMoniker": "Utilities\\LuneShopUtils.cs",
@@ -225,12 +298,11 @@
               "RelativeToolTip": "Utilities\\LuneShopUtils.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAEQAAAA0AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-08T22:39:01.271Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-08-08T22:39:01.271Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 21,
               "Title": "ThorSets.cs",
               "DocumentMoniker": "C:\\Users\\chloe\\Documents\\My Games\\Terraria\\tModLoader\\ModSources\\LuneLib\\Utilities\\Hashsets\\ThorSets.cs",
               "RelativeDocumentMoniker": "Utilities\\Hashsets\\ThorSets.cs",
@@ -242,19 +314,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 4,
               "Title": "LibConfig.cs",
               "DocumentMoniker": "C:\\Users\\chloe\\Documents\\My Games\\Terraria\\tModLoader\\ModSources\\LuneLib\\Common\\Config\\LibConfig.cs",
               "RelativeDocumentMoniker": "Common\\Config\\LibConfig.cs",
               "ToolTip": "C:\\Users\\chloe\\Documents\\My Games\\Terraria\\tModLoader\\ModSources\\LuneLib\\Common\\Config\\LibConfig.cs",
               "RelativeToolTip": "Common\\Config\\LibConfig.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA8AAAAhAAAA",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-07T22:39:20.916Z"
+              "WhenOpened": "2024-08-07T22:39:20.916Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 20,
+              "DocumentIndex": 24,
               "Title": "LuneLib.csproj",
               "DocumentMoniker": "C:\\Users\\chloe\\Documents\\My Games\\Terraria\\tModLoader\\ModSources\\LuneLib\\LuneLib.csproj",
               "RelativeDocumentMoniker": "LuneLib.csproj",
@@ -266,7 +339,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 15,
               "Title": "CalEXSets.cs",
               "DocumentMoniker": "C:\\Users\\chloe\\Documents\\My Games\\Terraria\\tModLoader\\ModSources\\LuneLib\\Utilities\\Hashsets\\CalEXSets.cs",
               "RelativeDocumentMoniker": "Utilities\\Hashsets\\CalEXSets.cs",
@@ -278,7 +351,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
+              "DocumentIndex": 23,
               "Title": "PoolSys.cs",
               "DocumentMoniker": "C:\\Users\\chloe\\Documents\\My Games\\Terraria\\tModLoader\\ModSources\\LuneWOL\\PressureCheckFolder\\PoolSys.cs",
               "RelativeDocumentMoniker": "..\\LuneWOL\\PressureCheckFolder\\PoolSys.cs",
@@ -289,7 +362,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 18,
+              "DocumentIndex": 22,
               "Title": "Pools.cs",
               "DocumentMoniker": "C:\\Users\\chloe\\Documents\\My Games\\Terraria\\tModLoader\\ModSources\\LuneWOL\\PressureCheckFolder\\Pools.cs",
               "RelativeDocumentMoniker": "..\\LuneWOL\\PressureCheckFolder\\Pools.cs",
@@ -300,7 +373,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 21,
+              "DocumentIndex": 25,
               "Title": "Pool.cs",
               "DocumentMoniker": "C:\\Users\\chloe\\Documents\\My Games\\Terraria\\tModLoader\\ModSources\\LuneWOL\\PressureCheckFolder\\Pool.cs",
               "RelativeDocumentMoniker": "..\\LuneWOL\\PressureCheckFolder\\Pool.cs",
@@ -311,7 +384,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 20,
               "Title": "DepthPressureFuckery.cs",
               "DocumentMoniker": "C:\\Users\\chloe\\Documents\\My Games\\Terraria\\tModLoader\\ModSources\\LuneWOL\\PressureCheckFolder\\DepthPressureFuckery.cs",
               "RelativeDocumentMoniker": "..\\LuneWOL\\PressureCheckFolder\\DepthPressureFuckery.cs",
@@ -322,7 +395,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 12,
               "Title": "LibNpcData.cs",
               "DocumentMoniker": "C:\\Users\\chloe\\Documents\\My Games\\Terraria\\tModLoader\\ModSources\\LuneLib\\Common\\NPCs\\LuneLibNpc\\LibNpcData.cs",
               "RelativeDocumentMoniker": "Common\\NPCs\\LuneLibNpc\\LibNpcData.cs",
@@ -330,11 +403,12 @@
               "RelativeToolTip": "Common\\NPCs\\LuneLibNpc\\LibNpcData.cs",
               "ViewState": "AgIAABAAAAAAAAAAAAAgwCMAAAALAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-06T00:24:40.476Z"
+              "WhenOpened": "2024-08-06T00:24:40.476Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 19,
               "Title": "Mod.Internals.cs",
               "DocumentMoniker": "C:\\Users\\chloe\\AppData\\Local\\Temp\\.vsdbgsrc\\566b2f913e3039e4401aa22ef3aed25ce4346224b767fa0403b4de29b10385bc\\Mod.Internals.cs",
               "RelativeDocumentMoniker": "..\\..\\..\\..\\..\\..\\AppData\\Local\\Temp\\.vsdbgsrc\\566b2f913e3039e4401aa22ef3aed25ce4346224b767fa0403b4de29b10385bc\\Mod.Internals.cs",
@@ -346,7 +420,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 22,
+              "DocumentIndex": 26,
               "Title": "description.txt",
               "DocumentMoniker": "C:\\Users\\chloe\\Documents\\My Games\\Terraria\\tModLoader\\ModSources\\LuneLib\\description.txt",
               "RelativeDocumentMoniker": "description.txt",
@@ -358,20 +432,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 13,
               "Title": "build.txt",
               "DocumentMoniker": "C:\\Users\\chloe\\Documents\\My Games\\Terraria\\tModLoader\\ModSources\\LuneLib\\build.txt",
               "RelativeDocumentMoniker": "build.txt",
               "ToolTip": "C:\\Users\\chloe\\Documents\\My Games\\Terraria\\tModLoader\\ModSources\\LuneLib\\build.txt",
               "RelativeToolTip": "build.txt",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAARAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAwAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003109|",
               "WhenOpened": "2024-08-05T22:26:41.256Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 16,
               "Title": "HashSets.cs",
               "DocumentMoniker": "C:\\Users\\chloe\\Documents\\My Games\\Terraria\\tModLoader\\ModSources\\LuneLib\\Utilities\\Hashsets\\HashSets.cs",
               "RelativeDocumentMoniker": "Utilities\\Hashsets\\HashSets.cs",

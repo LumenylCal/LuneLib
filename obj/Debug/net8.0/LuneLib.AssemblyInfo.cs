@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("LuneLib")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+f910a497cea97561d04925adf55413ea292cd809")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+5e1997de22f59c2a4b0378e5c24de988339bd327")]
 [assembly: System.Reflection.AssemblyProductAttribute("LuneLib")]
 [assembly: System.Reflection.AssemblyTitleAttribute("LuneLib")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

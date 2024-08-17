@@ -1,0 +1,21 @@
+Configs: {
+	Debug: {
+		Headers.debug101: Debuging
+		DisplayName: Debug
+
+		Eyes: {
+			Label: EC
+			Tooltip: Eye
+		}
+
+		TargetDistanceAirShare: {
+			Label: TDAS
+			Tooltip: test
+		}
+
+		DebugMessages: {
+			Label: Debug Messages
+			Tooltip: Debug Messages
+		}
+	}
+}

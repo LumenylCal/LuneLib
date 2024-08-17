@@ -92,7 +92,6 @@ C:\Users\chloe\Documents\My Games\Terraria\tModLoader\ModSources\LuneLib\bin\Deb
 C:\Users\chloe\Documents\My Games\Terraria\tModLoader\ModSources\LuneLib\bin\Debug\net8.0\ReLogic.xml
 C:\Users\chloe\Documents\My Games\Terraria\tModLoader\ModSources\LuneLib\bin\Debug\net8.0\tModPorter.pdb
 C:\Users\chloe\Documents\My Games\Terraria\tModLoader\ModSources\LuneLib\bin\Debug\net8.0\CalValEX.pdb
-C:\Users\chloe\Documents\My Games\Terraria\tModLoader\ModSources\LuneLib\bin\Debug\net8.0\CalamityMod.pdb
 C:\Users\chloe\Documents\My Games\Terraria\tModLoader\ModSources\LuneLib\bin\Debug\net8.0\ThoriumMod.pdb
 C:\Users\chloe\Documents\My Games\Terraria\tModLoader\ModSources\LuneLib\bin\Debug\net8.0\cs\Microsoft.CodeAnalysis.resources.dll
 C:\Users\chloe\Documents\My Games\Terraria\tModLoader\ModSources\LuneLib\bin\Debug\net8.0\de\Microsoft.CodeAnalysis.resources.dll
@@ -182,3 +181,4 @@ C:\Users\chloe\Documents\My Games\Terraria\tModLoader\ModSources\LuneLib\bin\Deb
 C:\Users\chloe\Documents\My Games\Terraria\tModLoader\ModSources\LuneLib\bin\Debug\net8.0\0Harmony.dll
 C:\Users\chloe\Documents\My Games\Terraria\tModLoader\ModSources\LuneLib\bin\Debug\net8.0\0Harmony.pdb
 C:\Users\chloe\Documents\My Games\Terraria\tModLoader\ModSources\LuneLib\bin\Debug\net8.0\0Harmony.xml
+C:\Users\chloe\Documents\My Games\Terraria\tModLoader\ModSources\LuneLib\bin\Debug\net8.0\CalamityMod.pdb

@@ -10,7 +10,10 @@ namespace LuneLib.Common.Config
         [Header("debug101")]
 
         [DefaultValue(false)]
-        public bool asd { get; set; }
+        public bool Eyes { get; set; }
+        
+        [DefaultValue(false)]
+        public bool DebugMessages { get; set; }
         
         [DefaultValue(0)]
         [Range(-1, int.MaxValue)]
