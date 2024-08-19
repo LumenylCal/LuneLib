@@ -96,10 +96,7 @@ namespace LuneLib.Utilities
         {
             foreach (var item in Main.item)
             {
-                if (item.value > 0)
-                {
-                    return item;
-                }
+                return item;
             }
             return null;
         }
@@ -108,22 +105,16 @@ namespace LuneLib.Utilities
             return tiles * 16;
         }
 
-        public static int CounterHelp(int countdownTime)
-        {
-            int count = countdownTime;
-            if (count > 0)
-            {
-                count--;
-            }
-            if (count <= 0)
-            {
-                count = SecondsToFramesL(countdownTime);
-            }
-
-            return count;
-        }
-
-
+        /// <summary>
+        /// Executes code after specified amount of seconds have passed
+        /// </summary>
+        /// <param name="seconds"></param>
+        //public static void Wait(int seconds, int ExecuteAtFrame)
+        //{
+        //    int count = SecondsToFramesL(seconds);
+        //    int executeatframe = ExecuteAtFrame;
+        //    //need to do this some day
+        //}
         public static int SecondsToFramesL(int seconds)
         {
             return seconds * 60;

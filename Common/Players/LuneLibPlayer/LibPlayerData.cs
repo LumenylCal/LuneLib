@@ -38,6 +38,9 @@ namespace LuneLib.Common.Players.LuneLibPlayer
                 public bool LStormEyeCovered = false;
                 public bool LNightEyes = false;
                 public bool IsNearLune = false;
+                public bool Lune = false;
+
+                public bool Caffeinated = false;
 
                 public int currentDepthPressure = 0; // Current Depth Pressure to apply bad regen with
 
@@ -68,6 +71,9 @@ namespace LuneLib.Common.Players.LuneLibPlayer
             LStormEyeCovered = false;
             LNightEyes = false;
             IsNearLune = false;
+            Lune = false;
+
+            Caffeinated = false;
 
             currentDepthPressure = 0;
 

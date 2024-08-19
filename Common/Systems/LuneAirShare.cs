@@ -50,6 +50,11 @@ namespace CalamitasMommy.Content.ChangesToGamePlay
                 {
                     Player.LibPlayer().IsNearLune = false;
                 }
+
+                if (LuneLib.LuneLib.debug.DebugMessages && Player.whoAmI == Main.myPlayer)
+                {
+                    Main.NewText($"distanceInTiles = {distanceInTiles}");
+                }
             }
         }
     }
