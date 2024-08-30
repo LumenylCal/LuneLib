@@ -9,8 +9,9 @@ PressureDeath8: "{0} forgot their reinforced diving suit."
 PressureDeath9: "{0} found R'Lyeh"
 PressureDeathTooDeep: "{0} found Lune."
 PressureDeathEdith: "{0} thought Lune wanted to have their company."
-LuneDied:
-	'''
-	[c/#07f2f2:Playback complete.] 
-	[c/#07f2f2:Resetting recording...]
-	'''
+CrimtuptionzoneDeath: "{0} got corrupted"
+FailedCrit1: "{0} rolled a 1"
+FailedCrit2: "{0} forgot to be lucky"
+FailedCrit3: "{0} critically failed to use their weapon"
+FailedCrit4: "{0} has to spin the bad wheel"
+FailedCrit5: "{0} was unlucky"

@@ -41,15 +41,5 @@ namespace LuneLib.Common.Players.LuneLibPlayer
         }
 
         #endregion
-
-        public override bool PreKill(double damage, int hitDirection, bool pvp, ref bool playSound, ref bool genDust, ref PlayerDeathReason damageSource)
-        {
-            if (LTSE)
-            {
-                SoundEngine.PlaySound(DrownSound, LP.Center);
-                damageSource = PlayerDeathReason.ByCustomReason(LuneLibUtils.GetText("Status.Death.LuneDied" + Main.rand.Next(1, 10 + 1)).Format(Player.name));
-            }
-            return true;
-        }
     }
 }

@@ -35,6 +35,7 @@ namespace LuneLib.Utilities.Hashsets
                     ProjectileID.Sharknado,
                     ProjectileID.Cthulunado,
                     ProjectileID.MartianTurretBolt,
+                    ProjectileID.RainNimbus,
 
                 #endregion
 

@@ -2,6 +2,8 @@
 using CalamityMod.BiomeManagers;
 using LuneLib.Common.NPCs.LuneLibNpc;
 using LuneLib.Common.Players.LuneLibPlayer;
+using Mono.Cecil.Cil;
+using MonoMod.Cil;
 using Terraria;
 using Terraria.GameContent;
 using Terraria.Localization;
@@ -13,7 +15,44 @@ namespace LuneLib.Utilities
 {
     public static class LuneLibUtils
     {
-        #region variables -w-
+
+        #region IL
+        // pannoniaes VanillaQoL+ mod stuff
+            public static void updateOffsets(ILCursor ilCursor)
+            {
+                var instrs = ilCursor.Instrs;
+                int curOffset = 0;
+
+                static Instruction[] ConvertToInstructions(ILLabel[] labels)
+                {
+                    Instruction[] ret = new Instruction[labels.Length];
+
+                    for (int i = 0; i < labels.Length; i++)
+                        ret[i] = labels[i].Target!;
+
+                    return ret;
+                }
+
+                foreach (var ins in instrs)
+                {
+                    ins.Offset = curOffset;
+
+                    if (ins.OpCode != OpCodes.Switch)
+                        curOffset += ins.GetSize();
+                    else
+                    {
+                        //'switch' opcodes don't like having the operand as an ILLabel[] when calling GetSize()
+                        //thus, this is required to even let the mod compile
+
+                        Instruction copy = Instruction.Create(ins.OpCode, ConvertToInstructions((ILLabel[])ins.Operand));
+                        curOffset += copy.GetSize();
+                    }
+                }
+            }
+
+        #endregion
+
+        #region fields and properties go ehre plss -w-
 
         /// <summary>
         /// L is just Main.CurrentPlayer
@@ -23,12 +62,12 @@ namespace LuneLib.Utilities
         /// <summary>
         /// Clientsided
         /// </summary>
-        public static Player LCP = Main.clientPlayer;
+        public static Player LCP => Main.clientPlayer;
         
         /// <summary>
         /// Local Player
         /// </summary>
-        public static Player LP = Main.LocalPlayer;
+        public static Player LP => Main.LocalPlayer;
 
         public static Player VL => VanillaPlayer(VL);
 
@@ -105,16 +144,6 @@ namespace LuneLib.Utilities
             return tiles * 16;
         }
 
-        /// <summary>
-        /// Executes code after specified amount of seconds have passed
-        /// </summary>
-        /// <param name="seconds"></param>
-        //public static void Wait(int seconds, int ExecuteAtFrame)
-        //{
-        //    int count = SecondsToFramesL(seconds);
-        //    int executeatframe = ExecuteAtFrame;
-        //    //need to do this some day
-        //}
         public static int SecondsToFramesL(int seconds)
         {
             return seconds * 60;

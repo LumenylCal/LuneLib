@@ -19,6 +19,7 @@ namespace LuneLib
         public bool CalValExLoaded;
         public bool CalamitasMommyLoaded;
         public bool ThoriumModLoaded;
+        public bool VanillaQoLLoaded;
 
         private MethodInfo _setStateByPlayerInfoMethod;
 
@@ -31,8 +32,8 @@ namespace LuneLib
             CalValExLoaded = ModLoader.HasMod("CalValEx");
             CalamitasMommyLoaded = ModLoader.HasMod("CalamitasMommy");
             ThoriumModLoaded = ModLoader.HasMod("ThoriumMod");
+            VanillaQoLLoaded = ModLoader.HasMod("VanillaQoL");
 
-            // Access private methods using reflection
             _setStateByPlayerInfoMethod = typeof(PlayerEyeHelper).GetMethod("SetStateByPlayerInfo", BindingFlags.NonPublic | BindingFlags.Instance);
 
             if (_setStateByPlayerInfoMethod == null)
@@ -66,7 +67,7 @@ namespace LuneLib
                 }
                 catch (Exception e)
                 {
-                    Logger.Error($"Error while switching to eye state: {e.Message}");
+                    Logger.Error($"Error while switching eye state: {e.Message}");
                 }
             }
         }

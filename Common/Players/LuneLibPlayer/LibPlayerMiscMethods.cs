@@ -25,7 +25,7 @@ namespace LuneLib.Common.Players.LuneLibPlayer
         {
             int leadCount = 0;
 
-            int[] leadArmorIDs = new int[] { ItemID.LeadHelmet, ItemID.LeadChainmail, ItemID.LeadGreaves };
+            int[] leadArmorIDs = [ItemID.LeadHelmet, ItemID.LeadChainmail, ItemID.LeadGreaves];
             for (int i = 0; i < 3; i++)
             {
                 if (Array.Exists(leadArmorIDs, id => Player.armor[i].type == id))
@@ -75,7 +75,7 @@ namespace LuneLib.Common.Players.LuneLibPlayer
         {
             int eskimoCount = 0;
 
-            int[] eskimoIDs = new int[] { ItemID.EskimoHood, ItemID.EskimoCoat, ItemID.EskimoPants, ItemID.PinkEskimoHood, ItemID.PinkEskimoCoat, ItemID.PinkEskimoPants };
+            int[] eskimoIDs = [ItemID.EskimoHood, ItemID.EskimoCoat, ItemID.EskimoPants, ItemID.PinkEskimoHood, ItemID.PinkEskimoCoat, ItemID.PinkEskimoPants];
             for (int i = 0; i < 3; i++)
             {
                 if (Array.Exists(eskimoIDs, id => Player.armor[i].type == id))
@@ -85,6 +85,31 @@ namespace LuneLib.Common.Players.LuneLibPlayer
             }
 
             return eskimoCount;
+        }
+
+        #endregion
+
+        #region Tungsten armour
+
+        public static bool WearingFullTungsten { get; set; }
+        public static bool WearingTwoTungstenPieces { get; set; }
+        public static bool WearingOneTungstenPiece { get; set; }
+        public static bool WearingAnyTungsten  { get; set; }
+
+        public int IsWearingTungsten()
+        {
+            int TungstenCount = 0;
+
+            int[] TungstenIDs = [ItemID.TungstenHelmet, ItemID.TungstenChainmail, ItemID.TungstenGreaves];
+            for (int i = 0; i < 3; i++)
+            {
+                if (Array.Exists(TungstenIDs, id => Player.armor[i].type == id))
+                {
+                    TungstenCount++;
+                }
+            }
+
+            return TungstenCount;
         }
 
         #endregion
@@ -109,10 +134,17 @@ namespace LuneLib.Common.Players.LuneLibPlayer
             
         int eskimoCount = IsWearingEskimo();
 
-            WearingFullEskimo = armourCount == 3;
-            WearingTwoEskimoPieces = armourCount == 2;
-            WearingOneEskimoPiece = armourCount == 1;
-            WearingAnyEskimo = armourCount > 0;
+            WearingFullEskimo = eskimoCount == 3;
+            WearingTwoEskimoPieces = eskimoCount == 2;
+            WearingOneEskimoPiece = eskimoCount == 1;
+            WearingAnyEskimo = eskimoCount > 0;
+            
+        int TungstenCount = IsWearingTungsten();
+
+            WearingFullTungsten = TungstenCount == 3;
+            WearingTwoTungstenPieces = TungstenCount == 2;
+            WearingOneTungstenPiece = TungstenCount == 1;
+            WearingAnyTungsten = TungstenCount > 0;
         }
 
         #endregion
