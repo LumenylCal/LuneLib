@@ -3,24 +3,13 @@ using Microsoft.Xna.Framework;
 using Terraria.GameContent.Events;
 using Terraria;
 using Terraria.ModLoader;
-using Terraria.DataStructures;
-using Terraria.Audio;
 
 using static LuneLib.Utilities.LuneLibUtils;
-using LuneLib.Content;
 
 namespace LuneLib.Common.Players.LuneLibPlayer
 {
     public partial class LibPlayer : ModPlayer
     {
-        public override void PreUpdateBuffs()
-        {
-            if (LTSE)
-            {
-                Player.AddBuff(ModContent.BuffType<Lune>(), 15);
-            }
-        }
-
         #region LuneHeadCovered
 
         public override void PostUpdate()

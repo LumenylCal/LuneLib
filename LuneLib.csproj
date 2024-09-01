@@ -8,8 +8,11 @@
 	</PropertyGroup>
 
 	<ItemGroup>
+	  <None Remove="Content\LunePet\LunesOceanSpiritBuff.png" />
+	  <None Remove="Content\LunePet\LunesOceanSpiritPROJ.png" />
 	  <None Remove="Localization\en-US\Mods.LuneLib.Buffs.hjson" />
 	  <None Remove="Localization\en-US\Mods.LuneLib.Messages.Chat.hjson" />
+	  <None Remove="Localization\en-US\Mods.LuneLib.Projectiles.hjson" />
 	  <None Remove="localization\Mods.LuneLib.Status.Death.hjson" />
 	</ItemGroup>
 

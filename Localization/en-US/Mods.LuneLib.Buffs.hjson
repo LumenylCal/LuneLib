@@ -2,3 +2,13 @@ Lune: {
 	DisplayName: Lune
 	Description: You are Lune. I think...
 }
+
+LunesOceanSpiritBuff: {
+	DisplayName: Lunes Ocean Spirit
+	Description: How'd you get this?
+}
+
+LPetBuff: {
+	DisplayName: L Pet Buff
+	Description: Mods.LuneLib.Buffs.LPetBuff.Description
+}
