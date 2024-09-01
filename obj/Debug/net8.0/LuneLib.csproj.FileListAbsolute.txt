@@ -182,3 +182,5 @@ C:\Users\chloe\Documents\My Games\Terraria\tModLoader\ModSources\LuneLib\bin\Deb
 C:\Users\chloe\Documents\My Games\Terraria\tModLoader\ModSources\LuneLib\bin\Debug\net8.0\0Harmony.pdb
 C:\Users\chloe\Documents\My Games\Terraria\tModLoader\ModSources\LuneLib\bin\Debug\net8.0\0Harmony.xml
 C:\Users\chloe\Documents\My Games\Terraria\tModLoader\ModSources\LuneLib\bin\Debug\net8.0\CalamityMod.pdb
+C:\Users\chloe\Documents\My Games\Terraria\tModLoader\ModSources\LuneLib\bin\Debug\net8.0\SpiritMod.dll
+C:\Users\chloe\Documents\My Games\Terraria\tModLoader\ModSources\LuneLib\bin\Debug\net8.0\SpiritMod.pdb

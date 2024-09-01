@@ -1,12 +1,12 @@
 ﻿using System;
-using Terraria.Audio;
-using Terraria.Chat;
-using Terraria.DataStructures;
 using Terraria.ID;
-using Terraria.Localization;
 using Terraria;
 using Terraria.ModLoader;
-using Microsoft.Xna.Framework;
+using static Terraria.GameContent.PlayerEyeHelper;
+using Terraria.GameContent;
+
+using static LuneLib.Utilities.LuneLibUtils;
+using static LuneLib.LuneLib;
 
 namespace LuneLib.Common.Players.LuneLibPlayer
 {

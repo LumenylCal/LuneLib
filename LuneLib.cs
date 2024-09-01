@@ -1,11 +1,11 @@
 using Terraria.ModLoader;
-using Terraria;
-using System.Reflection;
+using LuneLib.Common.Config;
+using System;
 using Terraria.GameContent;
+using Terraria;
+
 using static Terraria.GameContent.PlayerEyeHelper;
 using static LuneLib.Utilities.LuneLibUtils;
-using System;
-using LuneLib.Common.Config;
 
 namespace LuneLib
 {
@@ -20,8 +20,8 @@ namespace LuneLib
         public bool CalamitasMommyLoaded;
         public bool ThoriumModLoaded;
         public bool VanillaQoLLoaded;
-
-        private MethodInfo _setStateByPlayerInfoMethod;
+        public bool SpiritModLoaded;
+        public bool StrongerReforgesLoaded;
 
         public override void Load()
         {
@@ -33,15 +33,10 @@ namespace LuneLib
             CalamitasMommyLoaded = ModLoader.HasMod("CalamitasMommy");
             ThoriumModLoaded = ModLoader.HasMod("ThoriumMod");
             VanillaQoLLoaded = ModLoader.HasMod("VanillaQoL");
+            SpiritModLoaded = ModLoader.HasMod("SpiritMod");
+            StrongerReforgesLoaded = ModLoader.HasMod("StrongerReforges");
 
-            _setStateByPlayerInfoMethod = typeof(PlayerEyeHelper).GetMethod("SetStateByPlayerInfo", BindingFlags.NonPublic | BindingFlags.Instance);
-
-            if (_setStateByPlayerInfoMethod == null)
-            {
-                Logger.Warn("SetStateByPlayerInfo method not found!");
-            }
-
-            AddHooks();
+            On_PlayerEyeHelper.SetStateByPlayerInfo += PlayerEyeHelper_SetStateByPlayerInfo;
         }
 
         public override void Unload()
@@ -50,12 +45,7 @@ namespace LuneLib
             debug = null;
         }
 
-        private void AddHooks()
-        {
-            Terraria.GameContent.On_PlayerEyeHelper.SetStateByPlayerInfo += PlayerEyeHelper_SetStateByPlayerInfo;
-        }
-
-        private void PlayerEyeHelper_SetStateByPlayerInfo(Terraria.GameContent.On_PlayerEyeHelper.orig_SetStateByPlayerInfo orig, ref PlayerEyeHelper self, Player player)
+        private void PlayerEyeHelper_SetStateByPlayerInfo(On_PlayerEyeHelper.orig_SetStateByPlayerInfo orig, ref PlayerEyeHelper self, Player player)
         {
             orig(ref self, player);
 
@@ -67,7 +57,7 @@ namespace LuneLib
                 }
                 catch (Exception e)
                 {
-                    Logger.Error($"Error while switching eye state: {e.Message}");
+                    Logger.Error($"Aw shit here we go again. reflect: {e.Message}");
                 }
             }
         }

@@ -20,6 +20,9 @@
 		<Reference Include="CalamityMod">
 			<HintPath>..\..\ModReader\CalamityMod\CalamityMod.dll</HintPath>
 		</Reference>
+		<Reference Include="SpiritMod">
+			<HintPath>..\..\ModReader\SpiritMod\SpiritMod.dll</HintPath>
+		</Reference>
 		<Reference Include="InfernumMode">
 			<HintPath>..\..\ModReader\InfernumMode\InfernumMode.dll</HintPath>
 		</Reference>
