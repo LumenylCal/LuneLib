@@ -12,7 +12,7 @@ namespace LuneLib.Common.Systems
     {
         public override void SetDefaults(Item entity)
         {
-            if (entity.type == ItemID.BottomlessBucket && LTSE)
+            if (entity.type == ItemID.BottomlessBucket && LL)
             {
                 entity.useTime = 1;
                 entity.useAnimation = 1;

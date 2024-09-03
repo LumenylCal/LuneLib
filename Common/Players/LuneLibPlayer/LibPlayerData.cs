@@ -1,18 +1,14 @@
 ﻿using CalamityMod.DataStructures;
+using LuneLib.Content.LunePet;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using Terraria;
-using Terraria.Audio;
-using Terraria.Chat;
-using Terraria.DataStructures;
-using Terraria.GameContent;
-using Terraria.GameContent.Events;
 using Terraria.ID;
-using Terraria.Localization;
 using Terraria.ModLoader;
-using Terraria.UI;
+
 using static LuneLib.Utilities.LuneLibUtils;
 
 namespace LuneLib.Common.Players.LuneLibPlayer
@@ -53,9 +49,14 @@ namespace LuneLib.Common.Players.LuneLibPlayer
                 public bool LcDepth = false; // Custom crush depth debuff
                 public bool LTOceanH = false; // placeholder
 
-            #endregion
+        #endregion
 
         #endregion
+
+        public int sleepyTimer = 0;
+        public int lightLevel = 0;
+        public bool sleepy;
+        public bool asleep;
 
         public override void ResetEffects()
         {

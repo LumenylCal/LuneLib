@@ -4,6 +4,7 @@ using LuneLib.Common.NPCs.LuneLibNpc;
 using LuneLib.Common.Players.LuneLibPlayer;
 using Mono.Cecil.Cil;
 using MonoMod.Cil;
+using System;
 using Terraria;
 using Terraria.GameContent;
 using Terraria.Localization;
@@ -15,7 +16,6 @@ namespace LuneLib.Utilities
 {
     public static class LuneLibUtils
     {
-
         #region IL
         // pannoniaes VanillaQoL+ mod stuff
             public static void updateOffsets(ILCursor ilCursor)
@@ -80,10 +80,7 @@ namespace LuneLib.Utilities
         /// </summary>
         public static NPC N => GetCurrentNPC();
 
-        /// <summary>
-        /// should be able to be used like "if (LTSE && otherstuffhere)" so if the player name is correct we proceed
-        /// </summary>
-        public static bool LTSE => LuneTheSeaEmpress(L);
+        public static bool LL => LuneL(L);
 
         public static bool ZoneOcean => L.ZoneBeach;
 
@@ -150,15 +147,15 @@ namespace LuneLib.Utilities
 
         #endregion
 
-        #region LTSE
+        #region LL
         /// <summary>
-        /// should be checking if the players name is one of the listed ones
+        /// Checks if it's my SteamID
         /// </summary>
         /// <param name="player"></param>
         /// <returns></returns>
-        public static bool LuneTheSeaEmpress(this Player player)
+        public static bool LuneL(this Player player)
         {
-            return (player.name == "Amphitrite" || player.name == "Lune") && !player.dead;
+            return steamID.ToString() == "76561198818748376" && debug.LL;
         }
         #endregion
 
@@ -320,5 +317,27 @@ namespace LuneLib.Utilities
 
         #endregion
 
+        public static void FuckingShit(string message)
+        {
+            if (debug.DebugMessages)
+            {
+                string header = "LuneLib: ";
+                if (Main.dedServ)
+                {
+                    Console.WriteLine(header + message);
+                }
+                else
+                {
+                    if (Main.gameMenu)
+                    {
+                        instance.Logger.Debug(header + Main.myPlayer + ": " + message);
+                    }
+                    else
+                    {
+                        Main.NewText(header + message);
+                    }
+                }
+            }
+        }
     }
 }

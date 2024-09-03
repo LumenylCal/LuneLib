@@ -2,73 +2,19 @@
 using LuneLib.Utilities;
 using Microsoft.Xna.Framework;
 using Terraria;
-using Terraria.ID;
 using Terraria.ModLoader;
 
-namespace LuneWoL.Content.LunePet
+using static LuneLib.Utilities.LuneLibUtils;
+
+namespace LuneLib.Content.LunePet
 {
     public partial class LPet : ModProjectile
     {
-        public override string Texture => "LuneLib/Assets/Images/LPet";
-        public override void SetStaticDefaults()
-        {
-            Main.projFrames[Projectile.type] = 8;
-            Main.projPet[Projectile.type] = true;
-            ProjectileID.Sets.LightPet[Projectile.type] = true;
-        }
-
-        public override void SetDefaults()
-        {
-            Projectile.netImportant = true;
-            Projectile.width = 38;
-            Projectile.height = 58;
-            Projectile.friendly = true;
-            Projectile.penetrate = -1;
-            Projectile.timeLeft *= 5;
-            Projectile.ignoreWater = true;
-            Projectile.tileCollide = false;
-        }
-
+        private int sleepyTimer = 0;
+        private int lightLevel = 0;
+        private bool sleepy;
+        private bool asleep;
         public void FollowMouse()
-        {
-            // In Multi Player (MP) This code only runs on the client of the Projectile's owner, this is because it relies on mouse position, which isn't the same across all clients.
-            if (Main.myPlayer == Projectile.owner && Projectile.ai[0] == 0f)
-            {
-
-                Player player = Main.player[Projectile.owner];
-                // If the player channels the weapon, do something. This check only works if item.channel is true for the weapon.
-                if (player.channel)
-                {
-                    float maxDistance = 18f; // This also sets the maximun speed the Projectile can reach while following the cursor.
-                    Vector2 vectorToCursor = Main.MouseWorld - Projectile.Center;
-                    float distanceToCursor = vectorToCursor.Length();
-
-                    // Here we can see that the speed of the Projectile depends on the distance to the cursor.
-                    if (distanceToCursor > maxDistance)
-                    {
-                        distanceToCursor = maxDistance / distanceToCursor;
-                        vectorToCursor *= distanceToCursor;
-                    }
-
-                    int velocityXBy1000 = (int)(vectorToCursor.X * 1000f);
-                    int oldVelocityXBy1000 = (int)(Projectile.velocity.X * 1000f);
-                    int velocityYBy1000 = (int)(vectorToCursor.Y * 1000f);
-                    int oldVelocityYBy1000 = (int)(Projectile.velocity.Y * 1000f);
-
-                    // This code checks if the precious velocity of the Projectile is different enough from its new velocity, and if it is, syncs it with the server and the other clients in MP.
-                    // We previously multiplied the speed by 1000, then casted it to int, this is to reduce its precision and prevent the speed from being synced too much.
-                    if (velocityXBy1000 != oldVelocityXBy1000 || velocityYBy1000 != oldVelocityYBy1000)
-                    {
-                        Projectile.netUpdate = true;
-                    }
-
-                    Projectile.velocity = vectorToCursor;
-
-                }
-            }
-        }
-
-        public void OldAI()
         {
             Player player = Main.player[Projectile.owner];
             if (!player.active)
@@ -86,85 +32,128 @@ namespace LuneWoL.Content.LunePet
                 Projectile.timeLeft = 2;
             }
 
-            Projectile.frameCounter++;
-            if (Projectile.frameCounter > 8)
+
+            if (Main.mouseRight)
             {
-                Projectile.frame++;
-                Projectile.frameCounter = 0;
+                sleepyTimer++;
+                if (sleepyTimer >= 61)
+                {
+                    sleepy = false;
+                    asleep = false;
+                }
+                if (sleepyTimer >= 180)
+                {
+                    sleepyTimer = 180;
+                }
             }
-            if (Projectile.frame >= 8)
+            if (!Main.mouseRight)
             {
-                Projectile.frame = 0;
+                sleepyTimer--;
+                if (sleepyTimer <= 0)
+                {
+                    sleepyTimer = 0;
+                    sleepy = false;
+                    asleep = true;
+                }
             }
 
-            // Always emit light
-            Lighting.AddLight(Projectile.Center, 0f, 1.32f, 1.65f); // Light level 1
+            if (sleepyTimer >= 15 && sleepyTimer <= 60)
+            {
+                sleepy = true;
+                asleep = false;
+            }
+
+            if (!asleep)
+            {
+                Projectile.frameCounter++;
+                if (Projectile.frameCounter > 6)
+                {
+                    Projectile.frame++;
+                    Projectile.frameCounter = 0;
+                }
+            }
+
+            if (!asleep && !sleepy)
+            {
+                if (Projectile.frame >= 8)
+                {
+                    Projectile.frame = 0;
+                }
+            }
+
+            if (!asleep && sleepy)
+            {
+                if (Projectile.frame >= 16)
+                {
+                    Projectile.frame = 8;
+                }
+            }
+
+            if (!sleepy && !asleep)
+            {
+                lightLevel = 0;
+            }
+
+            if (sleepy && !asleep)
+            {
+                lightLevel = 1;
+            }
+
+            if (asleep)
+            {
+                lightLevel = 2;
+                Projectile.frame = 16;
+            }
+            
+            switch (lightLevel)
+            {
+                case 0:
+                    Lighting.AddLight(Projectile.Center, 0f, 2f, 2.5f);
+                    break;
+                case 1:
+                    Lighting.AddLight(Projectile.Center, 0f, 1.32f, 1.65f);
+                    break;
+                case 2:
+                    Lighting.AddLight(Projectile.Center, 0f, 0.5f, 0.7f);
+                    break;
+            }
 
             float velAdjustment = 0.2f;
-            float speedLimit = 5f;
+            float speedLimit = 16f;
             Vector2 playerVec = player.Center - Projectile.Center;
             playerVec.Y += player.gfxOffY;
-            if (player.controlLeft)
+            playerVec.Y -= 60f;
+            bool left = false;
+            bool right = false;
+
+            if (player.direction == 1)
             {
-                playerVec.X -= 120f;
+                right = true;
             }
-            else if (player.controlRight)
+            if (player.direction == -1)
             {
-                playerVec.X += 120f;
-            }
-            if (player.controlDown)
-            {
-                playerVec.Y += 120f;
-            }
-            else
-            {
-                if (player.controlUp)
-                {
-                    playerVec.Y -= 120f;
-                }
-                playerVec.Y -= 60f;
+                left = true;
             }
 
-            if (Projectile.velocity.X < -0.25f || player.controlLeft)
+            if (Projectile.velocity.X == 0f && left)
             {
-                Projectile.direction = -1; //face left
+                Projectile.direction = -1;
+                right = false;
             }
-            else if (Projectile.velocity.X > 0.25f || player.controlRight)
+            else if (Projectile.velocity.X == 0f && right)
             {
-                Projectile.direction = 1; //face right
+                Projectile.direction = 1;
+                left = false;
             }
             Projectile.spriteDirection = Projectile.direction;
 
             float playerDist = playerVec.Length();
-            if (playerDist > 1000f)
+            if (playerDist > 1000f && asleep)
             {
                 Projectile.position.X += playerVec.X;
                 Projectile.position.Y += playerVec.Y;
             }
-            if (Projectile.localAI[0] == 1f)
-            {
-                if (playerDist < 10f && player.velocity.Length() < speedLimit && player.velocity.Y == 0f)
-                {
-                    Projectile.localAI[0] = 0f;
-                }
-                speedLimit = 12f;
-                if (playerDist < speedLimit)
-                {
-                    Projectile.velocity = playerVec;
-                }
-                else
-                {
-                    playerDist = speedLimit / playerDist;
-                    Projectile.velocity = playerVec * playerDist;
-                }
-                Projectile.rotation = Projectile.velocity.X * 0.05f;
-                return;
-            }
-            if (playerDist > 200f)
-            {
-                Projectile.localAI[0] = 1f;
-            }
-            if (playerDist < 10f)
+            if (playerDist < 10f && asleep)
             {
                 Projectile.velocity.X = playerVec.X;
                 Projectile.velocity.Y = playerVec.Y;
@@ -176,44 +165,114 @@ namespace LuneWoL.Content.LunePet
                     velAdjustment = 0f;
                 }
             }
-            playerDist = speedLimit / playerDist;
-            playerVec *= playerDist;
-            if (Projectile.velocity.X < playerVec.X)
+            if (asleep)
             {
-                Projectile.velocity.X += velAdjustment;
-                if (Projectile.velocity.X < 0f)
+                playerDist = speedLimit / playerDist;
+                playerVec *= playerDist;
+                if (Projectile.velocity.X < playerVec.X)
                 {
-                    Projectile.velocity.X *= 0.99f;
+                    Projectile.velocity.X += velAdjustment;
+                    if (Projectile.velocity.X < 0f)
+                    {
+                        Projectile.velocity.X *= 0.99f;
+                    }
                 }
-            }
-            if (Projectile.velocity.X > playerVec.X)
-            {
-                Projectile.velocity.X -= velAdjustment;
-                if (Projectile.velocity.X > 0f)
+                if (Projectile.velocity.X > playerVec.X)
                 {
-                    Projectile.velocity.X *= 0.99f;
+                    Projectile.velocity.X -= velAdjustment;
+                    if (Projectile.velocity.X > 0f)
+                    {
+                        Projectile.velocity.X *= 0.99f;
+                    }
                 }
-            }
-            if (Projectile.velocity.Y < playerVec.Y)
-            {
-                Projectile.velocity.Y += velAdjustment;
-                if (Projectile.velocity.Y < 0f)
+                if (Projectile.velocity.Y < playerVec.Y)
                 {
-                    Projectile.velocity.Y *= 0.99f;
+                    Projectile.velocity.Y += velAdjustment;
+                    if (Projectile.velocity.Y < 0f)
+                    {
+                        Projectile.velocity.Y *= 0.99f;
+                    }
                 }
-            }
-            if (Projectile.velocity.Y > playerVec.Y)
-            {
-                Projectile.velocity.Y -= velAdjustment;
-                if (Projectile.velocity.Y > 0f)
+                if (Projectile.velocity.Y > playerVec.Y)
                 {
-                    Projectile.velocity.Y *= 0.99f;
+                    Projectile.velocity.Y -= velAdjustment;
+                    if (Projectile.velocity.Y > 0f)
+                    {
+                        Projectile.velocity.Y *= 0.99f;
+                    }
                 }
             }
             if (Projectile.velocity.X != 0f || Projectile.velocity.Y != 0f)
             {
                 Projectile.rotation = Projectile.velocity.X * 0.05f;
             }
+            if (!asleep)
+            {
+                Vector2 mouseVec = Main.MouseWorld - Projectile.Center;
+                Vector2 playaVec = player.Center - Projectile.Center;
+                mouseVec.Y -= 60f;
+
+                float mouseDist = mouseVec.Length();
+                float playaDist = playaVec.Length();
+
+                float maxSpeed = 10f;
+                float Acceleration = 0.2f;
+
+                if (mouseDist <= 10f)
+                {
+                    Projectile.velocity = Vector2.Zero;
+                }
+                mouseDist = maxSpeed / mouseDist;
+                mouseVec *= mouseDist;
+                if (Projectile.velocity.X < mouseVec.X)
+                {
+                    Projectile.velocity.X += Acceleration;
+                    if (Projectile.velocity.X < 0f)
+                    {
+                        Projectile.velocity.X *= 0.99f;
+                    }
+                }
+                if (Projectile.velocity.X > mouseVec.X)
+                {
+                    Projectile.velocity.X -= Acceleration;
+                    if (Projectile.velocity.X > 0f)
+                    {
+                        Projectile.velocity.X *= 0.99f;
+                    }
+                }
+                if (Projectile.velocity.Y < mouseVec.Y)
+                {
+                    Projectile.velocity.Y += Acceleration;
+                    if (Projectile.velocity.Y < 0f)
+                    {
+                        Projectile.velocity.Y *= 0.99f;
+                    }
+                }
+                if (Projectile.velocity.Y > mouseVec.Y)
+                {
+                    Projectile.velocity.Y -= Acceleration;
+                    if (Projectile.velocity.Y > 0f)
+                    {
+                        Projectile.velocity.Y *= 0.99f;
+                    }
+                }
+                if (Projectile.velocity.X != 0f || Projectile.velocity.Y != 0f)
+                {
+                    Projectile.rotation = Projectile.velocity.X * 0.05f;
+                }
+
+                if (Main.MouseWorld.X < player.Center.X)
+                {
+                    Projectile.spriteDirection = -1;
+                }
+                else if (Main.MouseWorld.X > player.Center.X)
+                {
+                    Projectile.spriteDirection = 1;
+                }
+            }
+
+            Projectile.netUpdate = true;
+
         }
     }
 }

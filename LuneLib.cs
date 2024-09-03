@@ -6,6 +6,9 @@ using Terraria;
 
 using static Terraria.GameContent.PlayerEyeHelper;
 using static LuneLib.Utilities.LuneLibUtils;
+using CalamityMod.Items.Potions.Alcohol;
+using Steamworks;
+using System.Reflection;
 
 namespace LuneLib
 {
@@ -22,10 +25,14 @@ namespace LuneLib
         public bool VanillaQoLLoaded;
         public bool SpiritModLoaded;
         public bool StrongerReforgesLoaded;
+        public bool BrighterLightLoaded;
 
+        public static CSteamID steamID;
         public override void Load()
         {
             instance = this;
+
+            steamID = SteamUser.GetSteamID();
 
             CalamityModLoaded = ModLoader.HasMod("CalamityMod");
             InfernumModeLoaded = ModLoader.HasMod("InfernumMode");
@@ -35,6 +42,7 @@ namespace LuneLib
             VanillaQoLLoaded = ModLoader.HasMod("VanillaQoL");
             SpiritModLoaded = ModLoader.HasMod("SpiritMod");
             StrongerReforgesLoaded = ModLoader.HasMod("StrongerReforges");
+            BrighterLightLoaded = ModLoader.HasMod("BrighterLight");
 
             On_PlayerEyeHelper.SetStateByPlayerInfo += PlayerEyeHelper_SetStateByPlayerInfo;
         }
@@ -49,11 +57,18 @@ namespace LuneLib
         {
             orig(ref self, player);
 
-            if (debug.Eyes == true && LTSE)
+            if (debug.Eyes == true && LL)
             {
                 try
                 {
-                    self.SwitchToState(EyeState.IsBlind);
+                    if (player.OceanMan())
+                    {
+                        return;
+                    }
+                    else
+                    {
+                        self.SwitchToState(EyeState.IsBlind);
+                    }
                 }
                 catch (Exception e)
                 {

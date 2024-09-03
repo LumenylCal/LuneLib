@@ -10,7 +10,7 @@ namespace LuneLib.Common.Players
     {
         public override IEnumerable<Item> AddStartingItems(bool faggotcuntcunt)
         {
-            if (LTSE)
+            if (LL)
             {
                 yield return new Item(ItemID.SuperAbsorbantSponge);
                 yield return new Item(ItemID.BottomlessBucket);

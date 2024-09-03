@@ -4,16 +4,26 @@ Debug: {
 
 	Eyes: {
 		Label: EC
-		Tooltip: Eye
+		Tooltip: most likely wont do anything for you
 	}
 
 	TargetDistanceAirShare: {
 		Label: TDAS
-		Tooltip: test
+		Tooltip: most likely wont do anything for you
 	}
 
 	DebugMessages: {
 		Label: Debug Messages
 		Tooltip: Debug Messages
+	}
+
+	LL: {
+		Label: LL
+		Tooltip: most likely wont do anything for you
+	}
+
+	DI: {
+		Label: DI
+		Tooltip: enables my pet...
 	}
 }

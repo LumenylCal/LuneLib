@@ -10,10 +10,18 @@ namespace LuneLib.Common.Config
         [Header("debug101")]
 
         [DefaultValue(false)]
+        public bool DebugMessages { get; set; }
+
+        [DefaultValue(false)]
         public bool Eyes { get; set; }
         
         [DefaultValue(false)]
-        public bool DebugMessages { get; set; }
+        [ReloadRequired]
+        public bool LL { get; set; } 
+        
+        [DefaultValue(false)]
+        [ReloadRequired]
+        public bool DI { get; set; }
         
         [DefaultValue(0)]
         [Range(-1, int.MaxValue)]

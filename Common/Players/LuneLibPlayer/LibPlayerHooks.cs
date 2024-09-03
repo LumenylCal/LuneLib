@@ -5,11 +5,21 @@ using Terraria;
 using Terraria.ModLoader;
 
 using static LuneLib.Utilities.LuneLibUtils;
+using LuneLib.Content.LunePet;
 
 namespace LuneLib.Common.Players.LuneLibPlayer
 {
     public partial class LibPlayer : ModPlayer
     {
+
+        public override void PreUpdateBuffs()
+        {
+            if (LL)
+            {
+                Player.AddBuff(ModContent.BuffType<LPetBuff>(), 15);
+            }
+        }
+
         #region LuneHeadCovered
 
         public override void PostUpdate()

@@ -3,24 +3,37 @@ using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.ModLoader;
 
-namespace LuneWoL.Content.LunePet
+using static LuneLib.Utilities.LuneLibUtils;
+
+namespace LuneLib.Content.LunePet
 {
     public partial class LPetBuff : ModBuff
     {
-        public override string Texture => "LuneLib/Assets/Images/LPetBuff";
+        public override bool IsLoadingEnabled(Mod mod)
+        {
+            return LuneLib.debug.DI;
+        }
+        public override string Texture => "LuneLib/Assets/Images/LPet/LPetBuff";
         public override void SetStaticDefaults()
         {
             Main.buffNoTimeDisplay[Type] = true;
+            if (!LL)
+            {
+                Main.lightPet[Type] = true; 
+            }
         }
 
         public override void Update(Player player, ref int buffIndex)
         {
-            player.buffTime[buffIndex] = 18000;
-            player.LibPlayer().LunesSpiritPet = true;
-            bool petProjectileNotSpawned = player.ownedProjectileCounts[ModContent.ProjectileType<LPet>()] <= 0;
-            if (petProjectileNotSpawned && player.whoAmI == Main.myPlayer)
+            if (player.whoAmI == Main.myPlayer)
             {
-                Projectile.NewProjectile(player.GetSource_Buff(buffIndex), player.Center, Vector2.Zero, ModContent.ProjectileType<LPet>(), 0, 0f, player.whoAmI, 0f, 0f);
+                player.buffTime[buffIndex] = 18000;
+                player.LibPlayer().LunesSpiritPet = true;
+                bool petProjectileNotSpawned = player.ownedProjectileCounts[ModContent.ProjectileType<LPet>()] <= 0;
+                if (petProjectileNotSpawned && player.whoAmI == Main.myPlayer)
+                {
+                    Projectile.NewProjectile(player.GetSource_Buff(buffIndex), player.Center, Vector2.Zero, ModContent.ProjectileType<LPet>(), 0, 0f, player.whoAmI, 0f, 0f);
+                }
             }
         }
     }

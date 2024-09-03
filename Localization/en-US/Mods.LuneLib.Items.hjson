@@ -1,0 +1,9 @@
+LPetOrb: {
+	DisplayName: Lunes Strange Orb
+	Tooltip: Blub
+}
+
+LOrb: {
+	Tooltip: ""
+	DisplayName: L Orb
+}
