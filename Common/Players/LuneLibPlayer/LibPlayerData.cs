@@ -18,7 +18,7 @@ namespace LuneLib.Common.Players.LuneLibPlayer
 
         public Player Llune;
 
-        #region All My Mods Debuffs
+        #region All My Mods stuff
 
             #region Lunes Worse of Life
 
@@ -28,35 +28,38 @@ namespace LuneLib.Common.Players.LuneLibPlayer
                 public bool LeadPoison = false; // weaing lead armour
                 public bool CrimtuptionzoneNight = false; // In crimtuption during night
                 public bool NightChild = false; // Nighty night
-                public bool HeatStroke = false; // HeatStroke
-                public bool depthwaterPressure = false; // Stage 1 Pressure
-                public bool LWaterEyes = false;
-                public bool LStormEyeCovered = false;
-                public bool LNightEyes = false;
-                public bool IsNearLune = false;
-                public bool Lune = false;
+                public bool HeatStroke = false; // heat stroking my dick i got lotion on my dick man im a freak though for real
+                public bool depthwaterPressure = false; // owie not the billionare sub!!1
+                public bool LWaterEyes = false; // used for darker waters
+                public bool LStormEyeCovered = false; // i think this is for the blizzard and or the sandstorm
+                public bool LNightEyes = false; // not used anymore i dont think who knows
+                public bool IsNearLune = false; // forgot and im lazy
+                public bool Lune = false; // forgot again
 
-                public bool Caffeinated = false;
+                public bool Caffeinated = false; // no longer needed
 
-                public int currentDepthPressure = 0; // Current Depth Pressure to apply bad regen with
+                public int currentDepthPressure = 0; // how deeåp = how many damage taje!!!1
 
             #endregion
 
             #region Calamitas Mommy (Lunes Shitty Mod PRIVATE)
 
-                public bool LunesSpiritPet = false; // Custom pet
-                public bool WConvert = false; // Private, just for fun
+                public bool WConvert = false; // Private, just for fun trollling xd x3 :3 nyaa meow ;3 mrrp meeewwww mrrowww meow meow converts all projectiles you shoot to wulfrum blasts beucase i thought id be funny
                 public bool LcDepth = false; // Custom crush depth debuff
-                public bool LTOceanH = false; // placeholder
+                public bool LTOceanH = false; // placeholder i forgot
+
+            #endregion
 
         #endregion
 
+        #region electromagclass
+
+        public float ElectroMagDamageAdd;
+        public float ElectroMagDamageMult = 1f;
+
         #endregion
 
-        public int sleepyTimer = 0;
-        public int lightLevel = 0;
-        public bool sleepy;
-        public bool asleep;
+        public bool LunesSpiritPet = false; // Custom pet
 
         public override void ResetEffects()
         {

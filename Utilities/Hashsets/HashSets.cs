@@ -8,7 +8,11 @@
             #region HashSetContainsAbyssProj
 
                 public static bool HashSetContainsAbyssProj(int type) =>
-                    ContainsInfAbyssProj(type) || ContainsCalAbyssProj(type) || ContainsVanAbyssProj(type) || ContainsThorAbyssProj(type);
+                    ContainsInfAbyssProj(type) 
+                 || ContainsCalAbyssProj(type) 
+                 || ContainsVanAbyssProj(type) 
+                 || ContainsThorAbyssProj(type)
+                 || ContainsSpiritAbyssProj(type);
 
                 public static bool ContainsInfAbyssProj(int type) => 
                     LuneLib.instance.InfernumModeLoaded && InfSets.AbyssalProjectiles.Contains(type);
@@ -16,6 +20,8 @@
                     LuneLib.instance.CalamityModLoaded && CalSets.AbyssalProjectiles.Contains(type);
                 public static bool ContainsThorAbyssProj(int type) =>
                     LuneLib.instance.ThoriumModLoaded && ThorSets.AbyssalProjectiles.Contains(type);
+                public static bool ContainsSpiritAbyssProj(int type) =>
+                    LuneLib.instance.SpiritModLoaded && SpiritSets.AbyssalProjectiles.Contains(type);
                 public static bool ContainsVanAbyssProj(int type) =>
                     VanillaSets.AbyssalProjectiles.Contains(type);
 
@@ -24,7 +30,12 @@
             #region HashSetContainsAbyssalPredator
 
                 public static bool HashSetContainsAbyssalPredator(int type) =>
-                    ContainsCalAbyssalPredator(type) || ContainsInfAbyssalPredator(type) || ContainsCalExAbyssalPredator(type) || ContainsVanAbyssalPredator(type) || ContainsThorExAbyssalPredator(type);
+                    ContainsCalAbyssalPredator(type) 
+                 || ContainsInfAbyssalPredator(type) 
+                 || ContainsCalExAbyssalPredator(type) 
+                 || ContainsVanAbyssalPredator(type) 
+                 || ContainsThorAbyssalPredator(type)
+                 || ContainsSpiritAbyssalPredator(type);
 
                 public static bool ContainsCalAbyssalPredator(int type) =>
                     LuneLib.instance.CalamityModLoaded && CalSets.AbyssalNPCs.Contains(type);
@@ -32,8 +43,10 @@
                     LuneLib.instance.InfernumModeLoaded && InfSets.AbyssalNPCs.Contains(type);
                 public static bool ContainsCalExAbyssalPredator(int type) =>
                     LuneLib.instance.CalValExLoaded &&  CalEXSets.AbyssalNPCs.Contains(type);
-                public static bool ContainsThorExAbyssalPredator(int type) =>
+                public static bool ContainsThorAbyssalPredator(int type) =>
                     LuneLib.instance.ThoriumModLoaded && ThorSets.AbyssalNPCs.Contains(type);
+                public static bool ContainsSpiritAbyssalPredator(int type) =>
+                    LuneLib.instance.SpiritModLoaded && SpiritSets.AbyssalNPCs.Contains(type);
                 public static bool ContainsVanAbyssalPredator(int type) =>
                     VanillaSets.AbyssalNPCs.Contains(type);
 

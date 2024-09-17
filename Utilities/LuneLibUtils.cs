@@ -2,6 +2,7 @@
 using CalamityMod.BiomeManagers;
 using LuneLib.Common.NPCs.LuneLibNpc;
 using LuneLib.Common.Players.LuneLibPlayer;
+using Microsoft.Xna.Framework;
 using Mono.Cecil.Cil;
 using MonoMod.Cil;
 using System;
@@ -82,6 +83,8 @@ namespace LuneLib.Utilities
 
         public static bool LL => LuneL(L);
 
+        public static bool LLL => LuneL(LP);
+
         public static bool ZoneOcean => L.ZoneBeach;
 
         [JITWhenModsEnabled("CalamityMod")]
@@ -116,7 +119,28 @@ namespace LuneLib.Utilities
         {
             return Language.GetOrRegister("Mods.LuneLib." + key);
         }
-
+        public static Vector2 MaxVector2(Vector2 vec1, Vector2 vec2)
+        {
+            if (vec1.X > vec2.X)
+            {
+                return vec1;
+            }
+            else if (vec1.X < vec2.X)
+            {
+                return vec2;
+            }
+            else
+            {
+                if (vec1.Y > vec2.Y)
+                {
+                    return vec1;
+                }
+                else
+                {
+                    return vec2;
+                }
+            }
+        }
         public static NPC GetCurrentNPC()
         {
             foreach (var npc in Main.npc)
@@ -155,8 +179,8 @@ namespace LuneLib.Utilities
         /// <returns></returns>
         public static bool LuneL(this Player player)
         {
-            return steamID.ToString() == "76561198818748376" && debug.LL;
-        }
+            return (steamID.ToString() == "176561198818748376" || player.name == "fish") && debug.LL;
+        } 
         #endregion
 
         #region player

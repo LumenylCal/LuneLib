@@ -16,7 +16,7 @@ namespace LuneLib.Content.LunePet
         public override string Texture => "LuneLib/Assets/Images/LPet/LPetBuff";
         public override void SetStaticDefaults()
         {
-            Main.buffNoTimeDisplay[Type] = true;
+            Main.buffNoTimeDisplay[Type] = false;
             if (!LL)
             {
                 Main.lightPet[Type] = true; 
@@ -27,7 +27,6 @@ namespace LuneLib.Content.LunePet
         {
             if (player.whoAmI == Main.myPlayer)
             {
-                player.buffTime[buffIndex] = 18000;
                 player.LibPlayer().LunesSpiritPet = true;
                 bool petProjectileNotSpawned = player.ownedProjectileCounts[ModContent.ProjectileType<LPet>()] <= 0;
                 if (petProjectileNotSpawned && player.whoAmI == Main.myPlayer)

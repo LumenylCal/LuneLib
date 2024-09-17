@@ -6,9 +6,7 @@ using Terraria;
 
 using static Terraria.GameContent.PlayerEyeHelper;
 using static LuneLib.Utilities.LuneLibUtils;
-using CalamityMod.Items.Potions.Alcohol;
 using Steamworks;
-using System.Reflection;
 
 namespace LuneLib
 {

@@ -24,15 +24,15 @@ namespace LuneLib.Utilities.Hashsets
 
         static InfSets()
         {
-            var isCalLoaded = ModLoader.HasMod("CalamityMod");
-            if (isCalLoaded)
+            var isInfCalLoaded = ModLoader.HasMod("InfernumMode");
+            if (isInfCalLoaded)
             {
 
-                AbyssalProjectiles = isCalLoaded ? CreateInfCalProjSpecificTypes() : new HashSet<int>();
+                AbyssalProjectiles = isInfCalLoaded ? CreateInfCalProjSpecificTypes() : new HashSet<int>();
 
-                AbyssalNPCs = isCalLoaded ? CreateInfCalNpcSpecificTypes() : new HashSet<int>();
+                AbyssalNPCs = isInfCalLoaded ? CreateInfCalNpcSpecificTypes() : new HashSet<int>();
 
-                AquaticBossProjectiles = isCalLoaded ? CreateInfCalBossProjSpecificTypes() : new HashSet<int>();
+                AquaticBossProjectiles = isInfCalLoaded ? CreateInfCalBossProjSpecificTypes() : new HashSet<int>();
 
             }
         }

@@ -18,7 +18,6 @@ namespace LuneLib.Content.LunePet
         public override void SetDefaults()
         {
             Item.CloneDefaults(ItemID.WispinaBottle);
-            Item.shoot = ModContent.ProjectileType<LPet>();
             Item.buffType = ModContent.BuffType<LPetBuff>();
         }
 

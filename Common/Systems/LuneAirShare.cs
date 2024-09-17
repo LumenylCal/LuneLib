@@ -4,6 +4,9 @@ using Terraria.ModLoader;
 using static LuneLib.Common.Players.LuneLibPlayer.LibPlayer;
 using static LuneLib.Utilities.LuneLibUtils;
 using static LuneLib.LuneLib;
+using Terraria.DataStructures;
+using Microsoft.Xna.Framework.Graphics;
+using Terraria.ID;
 
 namespace LuneLib.Common.Systems
 {
@@ -16,6 +19,7 @@ namespace LuneLib.Common.Systems
 
         public void AirShare()
         {
+            if (Main.netMode == NetmodeID.SinglePlayer) return;
             if (!LL) return;
 
             foreach (Player otherPlayer in Main.player)

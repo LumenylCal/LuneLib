@@ -241,3 +241,6 @@ C:\Users\chloe\Documents\My Games\Terraria\tModLoader\ModSources\LuneLib\bin\Deb
 C:\Users\chloe\Documents\My Games\Terraria\tModLoader\ModSources\LuneLib\bin\Debug\net8.0\System.Security.Permissions.xml
 C:\Users\chloe\Documents\My Games\Terraria\tModLoader\ModSources\LuneLib\bin\Debug\net8.0\System.Windows.Extensions.xml
 C:\Users\chloe\Documents\My Games\Terraria\tModLoader\ModSources\LuneLib\bin\Debug\net8.0\UtfUnknown.xml
+C:\Users\Lune\Documents\My Games\Terraria\tModLoader\ModSources\LuneLib\obj\Debug\net8.0\LuneLib.dll
+C:\Users\Lune\Documents\My Games\Terraria\tModLoader\ModSources\LuneLib\obj\Debug\net8.0\refint\LuneLib.dll
+C:\Users\Lune\Documents\My Games\Terraria\tModLoader\ModSources\LuneLib\obj\Debug\net8.0\LuneLib.pdb

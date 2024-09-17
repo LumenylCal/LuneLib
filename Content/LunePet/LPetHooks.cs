@@ -1,5 +1,9 @@
-﻿using Terraria;
+﻿using System.IO;
+using Terraria;
+using Terraria.ID;
 using Terraria.ModLoader;
+
+using static LuneLib.Utilities.LuneLibUtils;
 
 namespace LuneLib.Content.LunePet
 {
@@ -13,7 +17,11 @@ namespace LuneLib.Content.LunePet
         public override void SetStaticDefaults()
         {
             Main.projFrames[Projectile.type] = 17;
-            Main.projPet[Projectile.type] = true;
+            if (!LL)
+            {            
+                Main.projPet[Projectile.type] = true;
+                ProjectileID.Sets.LightPet[Projectile.type] = true;
+            }
         }
 
         public override void SetDefaults()
@@ -30,15 +38,38 @@ namespace LuneLib.Content.LunePet
 
         public override void AI()
         {
-            if (Projectile.owner == Main.myPlayer)
+            Projectile.netUpdate = true;
+            FollowMouse();
+
+            if (LuneLib.debug.DebugMessages)
             {
-                FollowMouse();
-            }
-            else
-            {
-                Projectile.alpha = 255;
-                Projectile.light = 0f;
+                Main.NewText($"Sleepy? {sleepy}, Asleep? {asleep}, LightLevel? {lightLevel}, SleepyTimer? {sleepyTimer}, Left {isItLeft}, Right {isItRight}");
             }
         }
+
+        public override void SendExtraAI(BinaryWriter writer)
+        {
+            writer.Write(isItLeft);
+            writer.Write(isItRight);
+            writer.Write(asleep);
+            writer.Write(sleepy);
+            writer.Write(sleepyTimer);
+            writer.Write(lightLevel);
+            writer.WriteVector2(mouseVec);
+            writer.Write7BitEncodedInt(Projectile.spriteDirection);
+        }
+
+        public override void ReceiveExtraAI(BinaryReader reader)
+        {
+            isItLeft = reader.ReadBoolean();
+            isItRight = reader.ReadBoolean();
+            asleep = reader.ReadBoolean();
+            sleepy = reader.ReadBoolean();
+            sleepyTimer = reader.ReadInt32();
+            lightLevel = reader.ReadInt32();
+            mouseVec = reader.ReadVector2();
+            Projectile.spriteDirection = reader.Read7BitEncodedInt();
+        }
+
     }
 }

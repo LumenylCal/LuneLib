@@ -31,14 +31,8 @@ namespace LuneLib.Common.Players.LuneLibPlayer
                 value = 0.8f;
                 amount = 0.1f;
             }
-            else if (Player.LibPlayer().LNightEyes && Player.whoAmI == Main.myPlayer)
-            {
-                value = 0.7f;
-                amount = 0.1f;
-            }
             ScreenObstruction.screenObstruction = MathHelper.Lerp(ScreenObstruction.screenObstruction, value, amount);
         }
-
         #endregion
     }
 }

@@ -1,10 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "h49LkmoayYM=",
+  "dgSpecHash": "3JFi7DzI3D4=",
   "success": true,
-  "projectFilePath": "C:\\Users\\chloe\\Documents\\My Games\\Terraria\\tModLoader\\ModSources\\LuneLib\\LuneLib.csproj",
+  "projectFilePath": "C:\\Users\\Lune\\Documents\\My Games\\Terraria\\tModLoader\\ModSources\\LuneLib\\LuneLib.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\chloe\\.nuget\\packages\\tmodloader.codeassist\\0.1.5\\tmodloader.codeassist.0.1.5.nupkg.sha512"
+    "C:\\Users\\Lune\\.nuget\\packages\\tmodloader.codeassist\\0.1.5\\tmodloader.codeassist.0.1.5.nupkg.sha512"
   ],
   "logs": []
 }
