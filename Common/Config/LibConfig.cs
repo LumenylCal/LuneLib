@@ -13,19 +13,16 @@ namespace LuneLib.Common.Config
         public bool DebugMessages { get; set; }
 
         [DefaultValue(false)]
-        public bool Eyes { get; set; }
-        
+        [ReloadRequired]
+        public bool TestMode { get; set; }
+
         [DefaultValue(false)]
         [ReloadRequired]
-        public bool LL { get; set; } 
-        
+        public bool LL { get; set; }
+
         [DefaultValue(false)]
         [ReloadRequired]
-        public bool DI { get; set; }
-        
-        [DefaultValue(0)]
-        [Range(-1, int.MaxValue)]
-        public int TargetDistanceAirShare { get; set; }
+        public bool LunesPet { get; set; }
 
         public override void OnLoaded()
         {

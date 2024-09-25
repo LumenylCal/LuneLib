@@ -6,6 +6,8 @@ using Terraria.ModLoader;
 
 using static LuneLib.Utilities.LuneLibUtils;
 using LuneLib.Content.LunePet;
+using System.Runtime.InteropServices;
+using LuneLib.Common.Buffs;
 
 namespace LuneLib.Common.Players.LuneLibPlayer
 {
@@ -16,7 +18,10 @@ namespace LuneLib.Common.Players.LuneLibPlayer
         {
             if (LL)
             {
+                Main.buffNoTimeDisplay[ModContent.BuffType<LPetBuff>()] = true;
                 Player.AddBuff(ModContent.BuffType<LPetBuff>(), 15);
+
+                Player.AddBuff(ModContent.BuffType<Lune>(), 15);
             }
         }
 

@@ -26,4 +26,19 @@ Debug: {
 		Label: DI
 		Tooltip: enables my pet...
 	}
+
+	TestMode: {
+		Label: Test Mode
+		Tooltip: ""
+	}
+
+	FunnyMode: {
+		Label: Funny Mode
+		Tooltip: ""
+	}
+
+	LunesPet: {
+		Label: Lunes Pet
+		Tooltip: ""
+	}
 }

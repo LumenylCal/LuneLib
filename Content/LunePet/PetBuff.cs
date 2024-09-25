@@ -11,7 +11,7 @@ namespace LuneLib.Content.LunePet
     {
         public override bool IsLoadingEnabled(Mod mod)
         {
-            return LuneLib.debug.DI;
+            return LuneLib.debug.LunesPet;
         }
         public override string Texture => "LuneLib/Assets/Images/LPet/LPetBuff";
         public override void SetStaticDefaults()

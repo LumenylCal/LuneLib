@@ -7,6 +7,10 @@ using Terraria;
 using static Terraria.GameContent.PlayerEyeHelper;
 using static LuneLib.Utilities.LuneLibUtils;
 using Steamworks;
+using System.IO;
+using Terraria.ID;
+using LuneLib.Common.Players.LuneLibPlayer;
+using LuneLib.Common.Buffs;
 
 namespace LuneLib
 {
@@ -24,8 +28,11 @@ namespace LuneLib
         public bool SpiritModLoaded;
         public bool StrongerReforgesLoaded;
         public bool BrighterLightLoaded;
+        public bool CoyoteframesLoaded;
+        public bool DarkSurfaceLoaded;
 
         public static CSteamID steamID;
+
         public override void Load()
         {
             instance = this;
@@ -41,6 +48,8 @@ namespace LuneLib
             SpiritModLoaded = ModLoader.HasMod("SpiritMod");
             StrongerReforgesLoaded = ModLoader.HasMod("StrongerReforges");
             BrighterLightLoaded = ModLoader.HasMod("BrighterLight");
+            CoyoteframesLoaded = ModLoader.HasMod("Coyoteframes");
+            DarkSurfaceLoaded = ModLoader.HasMod("DarkSurface");
 
             On_PlayerEyeHelper.SetStateByPlayerInfo += PlayerEyeHelper_SetStateByPlayerInfo;
         }
@@ -55,7 +64,7 @@ namespace LuneLib
         {
             orig(ref self, player);
 
-            if (debug.Eyes == true && LL)
+            if (debug.LL && player.HasBuff<Lune>())
             {
                 try
                 {

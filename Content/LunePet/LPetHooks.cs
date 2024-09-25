@@ -11,7 +11,7 @@ namespace LuneLib.Content.LunePet
     {
         public override bool IsLoadingEnabled(Mod mod)
         {
-            return LuneLib.debug.DI;
+            return LuneLib.debug.LunesPet;
         }
         public override string Texture => "LuneLib/Assets/Images/LPet/LPet";
         public override void SetStaticDefaults()
@@ -34,6 +34,11 @@ namespace LuneLib.Content.LunePet
             Projectile.timeLeft *= 5;
             Projectile.ignoreWater = true;
             Projectile.tileCollide = false;
+        }
+
+        public override bool? CanCutTiles()
+        {
+            return false;
         }
 
         public override void AI()

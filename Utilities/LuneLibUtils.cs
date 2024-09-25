@@ -81,7 +81,11 @@ namespace LuneLib.Utilities
         /// </summary>
         public static NPC N => GetCurrentNPC();
 
+        /// <summary>
+        /// Checks if it's my SteamID
+        /// </summary>
         public static bool LL => LuneL(L);
+        public static bool LE => LuneE(L);
 
         public static bool LLL => LuneL(LP);
 
@@ -179,7 +183,27 @@ namespace LuneLib.Utilities
         /// <returns></returns>
         public static bool LuneL(this Player player)
         {
-            return (steamID.ToString() == "176561198818748376" || player.name == "fish") && debug.LL;
+            if (steamID.ToString() == "76561198818748376" && debug.LL && player.whoAmI == Main.myPlayer && !debug.TestMode)
+            {
+                return true;
+            }
+            else if (player.name == "fish" && debug.LL && player.whoAmI == Main.myPlayer && debug.TestMode)
+            {
+                return true;
+            }
+            return false;
+        } 
+        #endregion
+        
+        #region LE
+        /// <summary>
+        /// Checks if it's my friends SteamID
+        /// </summary>
+        /// <param name="player"></param>
+        /// <returns></returns>
+        public static bool LuneE(this Player player)
+        {
+            return steamID.ToString() == "76561198348118589" && debug.LL && player.whoAmI == Main.myPlayer;
         } 
         #endregion
 

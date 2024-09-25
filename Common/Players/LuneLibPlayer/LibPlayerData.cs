@@ -32,11 +32,7 @@ namespace LuneLib.Common.Players.LuneLibPlayer
                 public bool depthwaterPressure = false; // owie not the billionare sub!!1
                 public bool LWaterEyes = false; // used for darker waters
                 public bool LStormEyeCovered = false; // i think this is for the blizzard and or the sandstorm
-                public bool LNightEyes = false; // not used anymore i dont think who knows
-                public bool IsNearLune = false; // forgot and im lazy
                 public bool Lune = false; // forgot again
-
-                public bool Caffeinated = false; // no longer needed
 
                 public int currentDepthPressure = 0; // how deeåp = how many damage taje!!!1
 
@@ -73,11 +69,7 @@ namespace LuneLib.Common.Players.LuneLibPlayer
             depthwaterPressure = false;
             LWaterEyes = false;
             LStormEyeCovered = false;
-            LNightEyes = false;
-            IsNearLune = false;
             Lune = false;
-
-            Caffeinated = false;
 
             currentDepthPressure = 0;
 
