@@ -10,12 +10,6 @@ namespace LuneLib.Common.Config
         [Header("debug101")]
 
         [DefaultValue(false)]
-        public bool DebugMessages { get; set; }
-
-        [DefaultValue(false)]
-        public bool Days { get; set; }
-
-        [DefaultValue(false)]
         [ReloadRequired]
         public bool TestMode { get; set; }
 

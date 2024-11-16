@@ -9,6 +9,10 @@ namespace LuneLib.Common.Systems
 {
     public class LLibSystem : ModSystem
     {
+        public override bool IsLoadingEnabled(Mod mod)
+        {
+            return LuneLib.clientConfig.Days;
+        }
         private int
             dayCount = 0,
             timertimer = 0,
@@ -59,7 +63,7 @@ namespace LuneLib.Common.Systems
                 sent = true;
             }
 
-            if (L.whoAmI == Main.myPlayer && LuneLib.debug.Days && !sent && timertimer <= 180)
+            if (L.whoAmI == Main.myPlayer && LuneLib.clientConfig.Days && !sent && timertimer <= 180)
             {
                 if (dayCount <= 6)
                 {

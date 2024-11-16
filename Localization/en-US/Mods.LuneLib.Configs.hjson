@@ -44,6 +44,21 @@ Debug: {
 
 	Days: {
 		Label: Days
-		Tooltip: ""
+		Tooltip: Shows a sick ass message at the start of days
 	}
+}
+
+Client: {
+	Days: {
+		Tooltip: ""
+		Label: Days
+	}
+
+	DebugMessages: {
+		Tooltip: ""
+		Label: Debug Messages
+	}
+
+	Headers.Spammy: Spammy Header
+	DisplayName: Client
 }

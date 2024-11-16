@@ -133,7 +133,19 @@ namespace LuneLib.Utilities
                 messageBackground.SetData(new[] { Color.White });
             }
         }
-
+        /// <summary>
+        /// Shows a message on your screen.
+        /// </summary>
+        /// <param name="input"></param>
+        /// <param name="textSize"></param>
+        /// <param name="textHeight"></param>
+        /// <param name="textR"></param>
+        /// <param name="textG"></param>
+        /// <param name="textB"></param>
+        /// <param name="bgA"></param>
+        /// <param name="bgR"></param>
+        /// <param name="bgG"></param>
+        /// <param name="bgB"></param>
         public static void ScreenMessage(string input, float textSize, int textHeight, int textR = 0, int textG = 0, int textB = 0, int bgA = 255, int bgR = 0, int bgG = 0, int bgB = 0)
         {
             MessageBackground();
@@ -407,7 +419,7 @@ namespace LuneLib.Utilities
 
         public static void FuckingShit(string message)
         {
-            if (debug.DebugMessages)
+            if (clientConfig.DebugMessages)
             {
                 string header = "LuneLib: ";
                 if (Main.dedServ)

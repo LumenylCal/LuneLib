@@ -14,6 +14,7 @@ namespace LuneLib
     {
         public static LuneLib instance;
         public static Debug debug;
+        public static Client clientConfig;
 
         public bool CalamityModLoaded;
         public bool InfernumModeLoaded;
@@ -54,6 +55,7 @@ namespace LuneLib
         {
             instance = null;
             debug = null;
+            clientConfig = null;
         }
 
         private void PlayerEyeHelper_SetStateByPlayerInfo(On_PlayerEyeHelper.orig_SetStateByPlayerInfo orig, ref PlayerEyeHelper self, Player player)
