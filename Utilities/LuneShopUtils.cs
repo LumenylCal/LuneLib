@@ -1,6 +1,5 @@
 ﻿using System;
 using Terraria;
-using Terraria.GameContent.Personalities;
 using Terraria.ModLoader;
 
 namespace LuneLib.Utilities

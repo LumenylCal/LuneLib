@@ -18,7 +18,7 @@ namespace LuneLib.Content.LunePet
         {
             Main.projFrames[Projectile.type] = 17;
             if (!LL)
-            {            
+            {
                 Main.projPet[Projectile.type] = true;
                 ProjectileID.Sets.LightPet[Projectile.type] = true;
             }

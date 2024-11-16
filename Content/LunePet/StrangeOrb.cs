@@ -3,8 +3,6 @@ using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
 
-using static LuneLib.Utilities.LuneLibUtils;
-
 namespace LuneLib.Content.LunePet
 {
     public class LOrb : ModItem

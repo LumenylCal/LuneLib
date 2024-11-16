@@ -1,13 +1,11 @@
-﻿using LuneLib.Utilities;
-using Microsoft.Xna.Framework;
-using Terraria.GameContent.Events;
-using Terraria;
-using Terraria.ModLoader;
-
-using static LuneLib.Utilities.LuneLibUtils;
+﻿using LuneLib.Common.Buffs;
 using LuneLib.Content.LunePet;
-using System.Runtime.InteropServices;
-using LuneLib.Common.Buffs;
+using LuneLib.Utilities;
+using Microsoft.Xna.Framework;
+using Terraria;
+using Terraria.GameContent.Events;
+using Terraria.ModLoader;
+using static LuneLib.Utilities.LuneLibUtils;
 
 namespace LuneLib.Common.Players.LuneLibPlayer
 {
@@ -25,7 +23,7 @@ namespace LuneLib.Common.Players.LuneLibPlayer
             }
         }
 
-        #region LuneHeadCovered
+        #region HeadCovered
 
         public override void PostUpdate()
         {

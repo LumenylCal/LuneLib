@@ -1,16 +1,12 @@
-using Terraria.ModLoader;
-using LuneLib.Common.Config;
-using System;
-using Terraria.GameContent;
-using Terraria;
-
-using static Terraria.GameContent.PlayerEyeHelper;
-using static LuneLib.Utilities.LuneLibUtils;
-using Steamworks;
-using System.IO;
-using Terraria.ID;
-using LuneLib.Common.Players.LuneLibPlayer;
 using LuneLib.Common.Buffs;
+using LuneLib.Common.Config;
+using Steamworks;
+using System;
+using Terraria;
+using Terraria.GameContent;
+using Terraria.ModLoader;
+using static LuneLib.Utilities.LuneLibUtils;
+using static Terraria.GameContent.PlayerEyeHelper;
 
 namespace LuneLib
 {

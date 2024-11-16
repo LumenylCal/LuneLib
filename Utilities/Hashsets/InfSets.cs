@@ -7,7 +7,6 @@ using InfernumMode.Content.BehaviorOverrides.BossAIs.OldDuke;
 using InfernumMode.Content.BehaviorOverrides.MinibossAIs.GiantClam;
 using InfernumMode.Content.BehaviorOverrides.MinibossAIs.NuclearTerror;
 using InfernumMode.Content.Projectiles.Generic;
-using System;
 using System.Collections.Generic;
 using Terraria.ModLoader;
 
@@ -39,9 +38,9 @@ namespace LuneLib.Utilities.Hashsets
 
         #region Abyssal Projectiles
 
-            private static HashSet<int> CreateInfCalProjSpecificTypes()
-            {
-                return new HashSet<int>
+        private static HashSet<int> CreateInfCalProjSpecificTypes()
+        {
+            return new HashSet<int>
                 {
 
                     #region InfernumMode Projectiles
@@ -89,15 +88,15 @@ namespace LuneLib.Utilities.Hashsets
                     #endregion
 
                 };
-            }
+        }
 
         #endregion
 
         #region Abyssal Npcs
 
-            private static HashSet<int> CreateInfCalNpcSpecificTypes()
-            {
-                return new HashSet<int>
+        private static HashSet<int> CreateInfCalNpcSpecificTypes()
+        {
+            return new HashSet<int>
                 {
 
                     #region InfernumMode NPCs
@@ -111,7 +110,7 @@ namespace LuneLib.Utilities.Hashsets
                     #endregion
 
                 };
-            }
+        }
 
         #endregion
 

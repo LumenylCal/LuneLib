@@ -50,7 +50,7 @@ namespace LuneLib.Utilities.Hashsets
 
         private static HashSet<int> CreateThorProjSpecificTypes()
         {
-        return new HashSet<int>
+            return new HashSet<int>
         {
             #region Ocean Proj
 
@@ -76,7 +76,7 @@ namespace LuneLib.Utilities.Hashsets
 
         private static HashSet<int> CreateThorNpcSpecificTypes()
         {
-        return new HashSet<int>
+            return new HashSet<int>
             {
 
                 #region Ocean npcs
@@ -153,7 +153,7 @@ namespace LuneLib.Utilities.Hashsets
 
         private static HashSet<int> CreateThorBossProjSpecificTypes()
         {
-        return new HashSet<int>
+            return new HashSet<int>
             {
                 #region Ocean Proj
 
@@ -184,7 +184,7 @@ namespace LuneLib.Utilities.Hashsets
 
         private static HashSet<int> CreateThorBossSpecificTypes()
         {
-        return new HashSet<int>
+            return new HashSet<int>
             {
                 ModContent.NPCType<QueenJellyfish>(),
                 ModContent.NPCType<ForgottenOne>(),
@@ -199,7 +199,7 @@ namespace LuneLib.Utilities.Hashsets
 
         private static HashSet<int> CreateThorTileSpecificTypes()
         {
-        return new HashSet<int>
+            return new HashSet<int>
             {
 
                 ModContent.TileType<GlowingMarineBlock>(),
@@ -232,7 +232,7 @@ namespace LuneLib.Utilities.Hashsets
 
         private static HashSet<int> CreateThorWallSpecificTypes()
         {
-        return new HashSet<int>
+            return new HashSet<int>
             {
 
                 ModContent.WallType<MarineWall>(),

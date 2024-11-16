@@ -13,10 +13,9 @@
 	  <None Remove="Content\LunePet\LunesOceanSpiritBuff.png" />
 	  <None Remove="Content\LunePet\LunesOceanSpiritPROJ.png" />
 	  <None Remove="Content\LunePet\StrangeOrb.png" />
-	  <None Remove="FuckOff.png" />
 	  <None Remove="Localization\en-US\Mods.LuneLib.Buffs.hjson" />
 	  <None Remove="Localization\en-US\Mods.LuneLib.Items.hjson" />
-	  <None Remove="Localization\en-US\Mods.LuneLib.Messages.Chat.hjson" />
+	  <None Remove="Localization\en-US\Mods.LuneLib.Messages.Chat.Isle.hjson" />
 	  <None Remove="Localization\en-US\Mods.LuneLib.Projectiles.hjson" />
 	  <None Remove="localization\Mods.LuneLib.Status.Death.hjson" />
 	</ItemGroup>
@@ -37,10 +36,6 @@
 		<Reference Include="ThoriumMod">
 			<HintPath>..\..\ModReader\ThoriumMod\ThoriumMod.dll</HintPath>
 		</Reference>
-	</ItemGroup>
-
-	<ItemGroup>
-	  <Folder Include="Common\Projectiles\" />
 	</ItemGroup>
 	
 </Project>

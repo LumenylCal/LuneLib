@@ -15,9 +15,7 @@ using CalamityMod.Tiles.Abyss.AbyssAmbient;
 using CalamityMod.Tiles.Ores;
 using CalamityMod.Tiles.SunkenSea;
 using CalamityMod.Walls;
-using System;
 using System.Collections.Generic;
-using Terraria;
 using Terraria.ModLoader;
 
 namespace LuneLib.Utilities.Hashsets
@@ -126,9 +124,9 @@ namespace LuneLib.Utilities.Hashsets
 
         #region Abyssal Npcs
 
-            private static HashSet<int> CreateCalNpcSpecificTypes()
-            {
-                return new HashSet<int>
+        private static HashSet<int> CreateCalNpcSpecificTypes()
+        {
+            return new HashSet<int>
                 {
 
                     #region Calamity Mod NPCs
@@ -254,15 +252,15 @@ namespace LuneLib.Utilities.Hashsets
                         #endregion
 
                 };
-            }
+        }
 
         #endregion
 
         #region Aquatic Boss Projectiles
 
-            private static HashSet<int> CreateCalBossProjSpecificTypes()
-            {
-                return new HashSet<int>
+        private static HashSet<int> CreateCalBossProjSpecificTypes()
+        {
+            return new HashSet<int>
                 {
 
                     #region Anahita
@@ -347,15 +345,15 @@ namespace LuneLib.Utilities.Hashsets
                     #endregion
 
                 };
-            }
+        }
 
         #endregion
 
         #region Aquatic Bosses
 
-            private static HashSet<int> CreateCalBossSpecificTypes()
-            {
-                return new HashSet<int>
+        private static HashSet<int> CreateCalBossSpecificTypes()
+        {
+            return new HashSet<int>
                 {
 
                     #region Ocean
@@ -453,15 +451,15 @@ namespace LuneLib.Utilities.Hashsets
                     #endregion
 
                 };
-            }
+        }
 
         #endregion
 
         #region Is Aquatic Tile
 
-            private static HashSet<int> CreateCalTileSpecificTypes()
-            {
-                return new HashSet<int>
+        private static HashSet<int> CreateCalTileSpecificTypes()
+        {
+            return new HashSet<int>
                 {
 
                     ModContent.TileType<SulphurousSand>(),
@@ -481,15 +479,15 @@ namespace LuneLib.Utilities.Hashsets
                     ModContent.TileType<MassiveRarePearl>(),
 
                 };
-            }
+        }
 
         #endregion
 
         #region Is Aquatic Wall
 
-            private static HashSet<int> CreateCalWallSpecificTypes()
-            {
-                return new HashSet<int>
+        private static HashSet<int> CreateCalWallSpecificTypes()
+        {
+            return new HashSet<int>
                 {
 
                     ModContent.WallType<EutrophicSandWall>(),
@@ -508,7 +506,7 @@ namespace LuneLib.Utilities.Hashsets
                     ModContent.WallType<SmoothVoidstoneWall>(),
 
                 };
-            }
+        }
 
         #endregion
     }

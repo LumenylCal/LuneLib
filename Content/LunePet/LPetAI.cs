@@ -1,7 +1,6 @@
 ﻿using LuneLib.Common.Players.LuneLibPlayer;
 using LuneLib.Utilities;
 using Microsoft.Xna.Framework;
-using System;
 using Terraria;
 using Terraria.ModLoader;
 

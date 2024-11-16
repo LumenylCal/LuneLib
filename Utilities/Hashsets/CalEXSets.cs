@@ -1,5 +1,4 @@
 ﻿using CalValEX.NPCs.Critters;
-using System;
 using System.Collections.Generic;
 
 using Terraria.ModLoader;

@@ -13,6 +13,9 @@ namespace LuneLib.Common.Config
         public bool DebugMessages { get; set; }
 
         [DefaultValue(false)]
+        public bool Days { get; set; }
+
+        [DefaultValue(false)]
         [ReloadRequired]
         public bool TestMode { get; set; }
 

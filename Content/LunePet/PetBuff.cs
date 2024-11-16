@@ -19,7 +19,7 @@ namespace LuneLib.Content.LunePet
             Main.buffNoTimeDisplay[Type] = false;
             if (!LL)
             {
-                Main.lightPet[Type] = true; 
+                Main.lightPet[Type] = true;
             }
         }
 

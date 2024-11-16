@@ -41,7 +41,7 @@ namespace LuneLib.Utilities.Hashsets
 
             };
         }
-        
+
         private static HashSet<int> CreateVanillaNpcSpecificTypes()
         {
             return new HashSet<int>
@@ -83,7 +83,7 @@ namespace LuneLib.Utilities.Hashsets
 
             };
         }
-        
+
         private static HashSet<int> CreateVanillaBossSpecificTypes()
         {
             return new HashSet<int>

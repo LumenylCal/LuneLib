@@ -7,7 +7,6 @@ using SpiritMod.NPCs.Mimic;
 using SpiritMod.NPCs.Reach;
 using SpiritMod.NPCs.Sea_Mandrake;
 using SpiritMod.NPCs.Tides;
-using System;
 using System.Collections.Generic;
 using Terraria.ModLoader;
 
@@ -93,9 +92,9 @@ namespace LuneLib.Utilities.Hashsets
         private static HashSet<int> CreateSpiritBossProjSpecificTypes()
         {
             return new HashSet<int>
-                {
+            {
 
-                };
+            };
         }
 
         #endregion

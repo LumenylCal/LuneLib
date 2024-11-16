@@ -3,8 +3,10 @@ using CalamityMod.BiomeManagers;
 using LuneLib.Common.NPCs.LuneLibNpc;
 using LuneLib.Common.Players.LuneLibPlayer;
 using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Graphics;
 using Mono.Cecil.Cil;
 using MonoMod.Cil;
+using ReLogic.Graphics;
 using System;
 using Terraria;
 using Terraria.GameContent;
@@ -19,39 +21,42 @@ namespace LuneLib.Utilities
     {
         #region IL
         // pannoniaes VanillaQoL+ mod stuff
-            public static void updateOffsets(ILCursor ilCursor)
+        public static void updateOffsets(ILCursor ilCursor)
+        {
+            var instrs = ilCursor.Instrs;
+            int curOffset = 0;
+
+            static Instruction[] ConvertToInstructions(ILLabel[] labels)
             {
-                var instrs = ilCursor.Instrs;
-                int curOffset = 0;
+                Instruction[] ret = new Instruction[labels.Length];
 
-                static Instruction[] ConvertToInstructions(ILLabel[] labels)
-                {
-                    Instruction[] ret = new Instruction[labels.Length];
+                for (int i = 0; i < labels.Length; i++)
+                    ret[i] = labels[i].Target!;
 
-                    for (int i = 0; i < labels.Length; i++)
-                        ret[i] = labels[i].Target!;
-
-                    return ret;
-                }
-
-                foreach (var ins in instrs)
-                {
-                    ins.Offset = curOffset;
-
-                    if (ins.OpCode != OpCodes.Switch)
-                        curOffset += ins.GetSize();
-                    else
-                    {
-                        //'switch' opcodes don't like having the operand as an ILLabel[] when calling GetSize()
-                        //thus, this is required to even let the mod compile
-
-                        Instruction copy = Instruction.Create(ins.OpCode, ConvertToInstructions((ILLabel[])ins.Operand));
-                        curOffset += copy.GetSize();
-                    }
-                }
+                return ret;
             }
 
+            foreach (var ins in instrs)
+            {
+                ins.Offset = curOffset;
+
+                if (ins.OpCode != OpCodes.Switch)
+                    curOffset += ins.GetSize();
+                else
+                {
+                    //'switch' opcodes don't like having the operand as an ILLabel[] when calling GetSize()
+                    //thus, this is required to even let the mod compile
+
+                    Instruction copy = Instruction.Create(ins.OpCode, ConvertToInstructions((ILLabel[])ins.Operand));
+                    curOffset += copy.GetSize();
+                }
+            }
+        }
+
         #endregion
+
+
+
 
         #region fields and properties go ehre plss -w-
 
@@ -64,7 +69,7 @@ namespace LuneLib.Utilities
         /// Clientsided
         /// </summary>
         public static Player LCP => Main.clientPlayer;
-        
+
         /// <summary>
         /// Local Player
         /// </summary>
@@ -115,14 +120,49 @@ namespace LuneLib.Utilities
         [JITWhenModsEnabled("CalamityMod")]
         public static bool ZoneAquatic => ZoneSulphur || ZoneOcean || ZoneSunkenSea;
 
+        private static Texture2D messageBackground;
         #endregion
 
         #region help
+
+        private static void MessageBackground()
+        {
+            if (messageBackground == null)
+            {
+                messageBackground = new Texture2D(Main.graphics.GraphicsDevice, 1, 1);
+                messageBackground.SetData(new[] { Color.White });
+            }
+        }
+
+        public static void ScreenMessage(string input, float textSize, int textHeight, int textR = 0, int textG = 0, int textB = 0, int bgA = 255, int bgR = 0, int bgG = 0, int bgB = 0)
+        {
+            MessageBackground();
+
+            Main.spriteBatch.Begin(SpriteSortMode.Deferred, BlendState.AlphaBlend, SamplerState.PointClamp, DepthStencilState.None, RasterizerState.CullCounterClockwise, null, Main.UIScaleMatrix);
+
+            Color textColor = new(textR, textG, textB);
+            Color backgroundColor = new(bgR, bgG, bgB, bgA);
+
+            DynamicSpriteFont font = FontAssets.MouseText.Value;
+            Vector2 textPosition = new(Main.screenWidth / 2, Main.screenHeight / 2 + textHeight);
+            Vector2 stringSize = font.MeasureString(input) * textSize;
+            textPosition.X -= stringSize.X / 2;
+
+            if (bgA != 0)
+            {
+                Rectangle backgroundRectangle = new(0, 0, Main.screenWidth + 32, Main.screenHeight + 32);
+                Main.spriteBatch.Draw(messageBackground, backgroundRectangle, backgroundColor);
+            }
+
+            Main.spriteBatch.DrawString(font, input, textPosition, textColor, 0f, Vector2.Zero, textSize, SpriteEffects.None, 0f);
+            Main.spriteBatch.End();
+        }
 
         public static LocalizedText GetText(string key)
         {
             return Language.GetOrRegister("Mods.LuneLib." + key);
         }
+
         public static Vector2 MaxVector2(Vector2 vec1, Vector2 vec2)
         {
             if (vec1.X > vec2.X)
@@ -192,9 +232,9 @@ namespace LuneLib.Utilities
                 return true;
             }
             return false;
-        } 
+        }
         #endregion
-        
+
         #region LE
         /// <summary>
         /// Checks if it's my friends SteamID
@@ -204,7 +244,7 @@ namespace LuneLib.Utilities
         public static bool LuneE(this Player player)
         {
             return steamID.ToString() == "76561198348118589" && debug.LL && player.whoAmI == Main.myPlayer;
-        } 
+        }
         #endregion
 
         #region player
@@ -222,7 +262,7 @@ namespace LuneLib.Utilities
 
         public static bool LInSpace(this Player player)
         {
-            float num = (float)Main.maxTilesX / 4200f;
+            float num = Main.maxTilesX / 4200f;
             num *= num;
             return (float)((double)(player.position.Y / 16f - (60f + 10f * num)) / (Main.worldSurface / 6.0)) < 1f;
         }

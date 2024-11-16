@@ -1,57 +1,109 @@
-﻿using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 using Terraria;
-using Terraria.ID;
 using Terraria.Localization;
 using Terraria.ModLoader;
-
+using Terraria.UI;
 using static LuneLib.Utilities.LuneLibUtils;
 
 namespace LuneLib.Common.Systems
 {
-    public class LibSystem : GlobalItem
-    {
-        public override void SetDefaults(Item entity)
-        {
-            if (entity.type == ItemID.BottomlessBucket && LL)
-            {
-                entity.useTime = 1;
-                entity.useAnimation = 1;
-            }
-        }
-    }
-
     public class LLibSystem : ModSystem
     {
-        private int dayCount = 0;
+        private int
+            dayCount = 0,
+            timertimer = 0,
+            day6StartTimer = 0,
+            reset1Timer = 0,
+            reset2StartTimer = 0,
+            reset2Timer = 0;
 
-        private bool wasDay = false;
+        private bool
+            wasDay = false,
+            day6StartTimerDone = false,
+            sent = false;
 
-        public override void PostUpdateEverything()
+
+        public override void ModifyInterfaceLayers(List<GameInterfaceLayer> layers)
         {
             bool isDay = Main.dayTime;
 
             if (isDay && !wasDay)
             {
                 dayCount++;
+                sent = false;
+                day6StartTimerDone = false;
+                timertimer = 0;
+                day6StartTimer = 0;
+                reset1Timer = 0;
+                reset2StartTimer = 0;
+                reset2Timer = 0;
             }
 
             wasDay = isDay;
 
-            if (dayCount >= 6 && L.whoAmI == Main.myPlayer)
+            if (dayCount > 6)
             {
-                ResetSimulation();
+                dayCount = 1;
+            }
 
-                dayCount = 0;
+            if (timertimer <= 180 && !sent)
+            {
+                timertimer++;
+            }
+            else if (sent && isDay && !wasDay)
+            {
+                timertimer = 0;
+            }
+            if (timertimer > 180)
+            {
+                sent = true;
+            }
+
+            if (L.whoAmI == Main.myPlayer && LuneLib.debug.Days && !sent && timertimer <= 180)
+            {
+                if (dayCount <= 6)
+                {
+                    ScreenMessage
+                    (
+                        Language.GetTextValue($"Mods.LuneLib.Messages.Chat.Isle.Day{dayCount}"),
+                        1.5f, 300, 255, 255, 0, 0
+                    );
+                }
+            }
+
+            if (dayCount == 6)
+            {
+                if (day6StartTimer < 300)
+                {
+                    day6StartTimer++;
+                }
+                else if (reset1Timer < 480)
+                {
+                    ScreenMessage
+                    (
+                        Language.GetTextValue("Mods.LuneLib.Messages.Chat.Isle.TheReset1"),
+                        1.5f, 325, 7, 242, 242, 0
+                    );
+                    reset1Timer++;
+                    day6StartTimerDone = true;
+                }
+
+                if (day6StartTimerDone && reset2StartTimer < 300)
+                {
+                    reset2StartTimer++;
+                }
+
+                if (reset2StartTimer >= 300 && reset2Timer <= 480)
+                {
+                    ScreenMessage
+                    (
+                        Language.GetTextValue("Mods.LuneLib.Messages.Chat.Isle.TheReset2"),
+                        1.5f, 360, 7, 242, 242, 0
+                    );
+                    reset2Timer++;
+                }
             }
         }
-
-        private async void ResetSimulation()
-        {
-            Main.NewText(Language.GetTextValue("Mods.LuneLib.Messages.Chat.TheReset1"), 7, 242 , 242);
-
-            await Task.Delay(5000);
-
-            Main.NewText(Language.GetTextValue("Mods.LuneLib.Messages.Chat.TheReset2"), 7, 242, 242);
-        }
     }
+
 }

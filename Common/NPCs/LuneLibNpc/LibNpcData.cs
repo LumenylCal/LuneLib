@@ -1,7 +1,4 @@
-﻿using Terraria;
-using Terraria.ModLoader;
-
-using static LuneLib.Utilities.LuneLibUtils;
+﻿using Terraria.ModLoader;
 
 namespace LuneLib.Common.NPCs.LuneLibNpc
 {
@@ -11,18 +8,18 @@ namespace LuneLib.Common.NPCs.LuneLibNpc
 
         #region all my mods debuffs
 
-            #region Lunes Worse of Life
+        #region Lunes Worse of Life
 
-                //public int BoilFreeze = 0;
+        //public int BoilFreeze = 0;
 
-            #endregion
+        #endregion
 
-            #region Calamitas Mommy (Lunes Shitty Mod) this mod is currently private... its just changes id like to my game
+        #region Calamitas Mommy (Lunes Shitty Mod) this mod is currently private... its just changes id like to my game
 
-                public int LcDepth = 0;
-                public int damageCooldown = 0;
+        public int LcDepth = 0;
+        public int damageCooldown = 0;
 
-            #endregion
+        #endregion
 
         #endregion
 
@@ -30,7 +27,7 @@ namespace LuneLib.Common.NPCs.LuneLibNpc
         //{
         //    if (BoilFreeze > 0)
         //        BoilFreeze--;
-            
+
         //    if (LcDepth > 0)
         //        LcDepth--;
         //}
