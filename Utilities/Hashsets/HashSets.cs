@@ -1,11 +1,40 @@
-﻿namespace LuneLib.Utilities.Hashsets
+﻿using LuneLib.Utilities.Hashsets.Calamity;
+using LuneLib.Utilities.Hashsets.Spirit;
+using LuneLib.Utilities.Hashsets.Thorium;
+using LuneLib.Utilities.Hashsets.Vanilla;
+
+namespace LuneLib.Utilities.Hashsets
 {
     public static class HashSets
     {
 
-        #region HashSet Contains Type {?}
+        #region HashSet Contains Type
 
-        #region HashSetContainsAbyssProj
+        #region HashSet Contains Ore Tile
+
+        public static bool HashSetContainsOreTile(int type) =>
+            ContainsVanillaOreTile(type) || ContainsCalOreTile(type) || 
+            ContainsSpiritOreTile(type) || ContainsThorOreTile(type);
+
+        public static bool ContainsVanillaOreTile(int type) =>
+            VanillaOreSets.VanillaOres.Contains(type);
+        public static bool ContainsCalOreTile(int type) =>
+            LuneLib.instance.CalamityModLoaded && CalOreSets.CalOreSet.Contains(type);
+        public static bool ContainsSpiritOreTile(int type) =>
+            LuneLib.instance.SpiritModLoaded && SpiritOreSets.SpiritOreSet.Contains(type);
+        public static bool ContainsThorOreTile(int type) =>
+            LuneLib.instance.ThoriumModLoaded && ThoriumOreSets.ThoriumOreSet.Contains(type);
+
+        #endregion
+
+        #region Metallic Armours
+
+        public static bool IsMetalArmour(int type) => MetallicAmours(type);
+        public static bool MetallicAmours(int type) => VanillaMetallicSets.MetallicArmourSets.Contains(type);
+
+        #endregion
+
+        #region HashSet Contains Abyss Proj
 
         public static bool HashSetContainsAbyssProj(int type) =>
             ContainsInfAbyssProj(type)
@@ -27,7 +56,7 @@
 
         #endregion
 
-        #region HashSetContainsAbyssalPredator
+        #region HashSet Contains Abyssal Predator
 
         public static bool HashSetContainsAbyssalPredator(int type) =>
             ContainsCalAbyssalPredator(type)
@@ -52,7 +81,7 @@
 
         #endregion
 
-        #region HashSetContainsAquaticBossProjectile
+        #region HashSet Contains Aquatic Boss Projectile
 
         public static bool HashSetContainsAquaticBossProjectile(int type) =>
             ContainsCalAquaticBossProjectile(type) || ContainsInfAquaticBossProjectile(type) || ContainsThorAquaticBossProjectile(type);
@@ -66,7 +95,7 @@
 
         #endregion
 
-        #region HashSetContainsAquaticBoss
+        #region HashSet Contains Aquatic Boss
 
         public static bool HashSetContainsAquaticBoss(int type) =>
             ContainsCalAquaticBoss(type) || ContainsInfAquaticBossProjectile(type) || ContainsVanAquaticBoss(type) || ContainsThorAquaticBoss(type);
@@ -80,7 +109,7 @@
 
         #endregion
 
-        #region HashSetContainsAquaticTile
+        #region HashSet Contains Aquatic Tile
 
         public static bool HashSetContainsAquaticTile(int type) =>
             ContainsCalAquaticTile(type) || ContainsCalMAquaticTile(type) || ContainsThorAquaticTile(type);
@@ -94,7 +123,7 @@
 
         #endregion
 
-        #region HashSetContainsCalAquaticWall
+        #region HashSet Contains Aquatic Wall
 
         public static bool HashSetContainsCalAquaticWall(int type) =>
             ContainsCalAquaticWall(type) || ContainsThorAquaticWall(type);

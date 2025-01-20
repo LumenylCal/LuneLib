@@ -12,7 +12,7 @@ namespace LuneLib.Common.Config
         [DefaultValue(false)]
         public bool DebugMessages { get; set; }
 
-        [DefaultValue(false)]
+        [DefaultValue(true)]
         public bool Days { get; set; }
 
         public override void OnLoaded()

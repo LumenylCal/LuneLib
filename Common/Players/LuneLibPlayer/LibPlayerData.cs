@@ -1,13 +1,11 @@
-﻿using Terraria;
-using Terraria.ModLoader;
+﻿using Terraria.ModLoader;
 
 namespace LuneLib.Common.Players.LuneLibPlayer
 {
     public partial class LibPlayer : ModPlayer
     {
 
-        public Player Llune; //???? no fucking idea
-        public bool Lune = false;
+        public bool IsLune = false;
 
         #region All My Mods stuff
 
@@ -59,7 +57,7 @@ namespace LuneLib.Common.Players.LuneLibPlayer
             depthwaterPressure = false;
             LWaterEyes = false;
             LStormEyeCovered = false;
-            Lune = false;
+            IsLune = false;
 
             currentDepthPressure = 0;
 

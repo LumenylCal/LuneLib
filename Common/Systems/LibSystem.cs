@@ -72,6 +72,11 @@ namespace LuneLib.Common.Systems
                         Language.GetTextValue($"Mods.LuneLib.Messages.Chat.Isle.Day{dayCount}"),
                         1.5f, 300, 255, 255, 0, 0
                     );
+                    ScreenMessage
+                    (
+                        Language.GetTextValue("Mods.LuneLib.Messages.Chat.Isle.SHUTUPPPPP"),
+                        0.75f, 350, 165, 0, 35, 0
+                    );
                 }
             }
 

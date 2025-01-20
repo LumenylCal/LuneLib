@@ -4,8 +4,6 @@ using LuneLib.Common.NPCs.LuneLibNpc;
 using LuneLib.Common.Players.LuneLibPlayer;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
-using Mono.Cecil.Cil;
-using MonoMod.Cil;
 using ReLogic.Graphics;
 using System;
 using Terraria;
@@ -19,45 +17,6 @@ namespace LuneLib.Utilities
 {
     public static class LuneLibUtils
     {
-        #region IL
-        // pannoniaes VanillaQoL+ mod stuff
-        public static void updateOffsets(ILCursor ilCursor)
-        {
-            var instrs = ilCursor.Instrs;
-            int curOffset = 0;
-
-            static Instruction[] ConvertToInstructions(ILLabel[] labels)
-            {
-                Instruction[] ret = new Instruction[labels.Length];
-
-                for (int i = 0; i < labels.Length; i++)
-                    ret[i] = labels[i].Target!;
-
-                return ret;
-            }
-
-            foreach (var ins in instrs)
-            {
-                ins.Offset = curOffset;
-
-                if (ins.OpCode != OpCodes.Switch)
-                    curOffset += ins.GetSize();
-                else
-                {
-                    //'switch' opcodes don't like having the operand as an ILLabel[] when calling GetSize()
-                    //thus, this is required to even let the mod compile
-
-                    Instruction copy = Instruction.Create(ins.OpCode, ConvertToInstructions((ILLabel[])ins.Operand));
-                    curOffset += copy.GetSize();
-                }
-            }
-        }
-
-        #endregion
-
-
-
-
         #region fields and properties go ehre plss -w-
 
         /// <summary>
@@ -66,33 +25,15 @@ namespace LuneLib.Utilities
         public static Player L => Main.CurrentPlayer;
 
         /// <summary>
-        /// Clientsided
-        /// </summary>
-        public static Player LCP => Main.clientPlayer;
-
-        /// <summary>
         /// Local Player
         /// </summary>
         public static Player LP => Main.LocalPlayer;
-
-        public static Player VL => VanillaPlayer(VL);
-
-        public static Item LI => GetCurrentItem();
-
-        public static PlayerEyeHelper E => EyePlayer(E);
-
-        /// <summary>
-        /// N is supposed to be like ExampleMethod("NPC npc" < that) but i have no idea if it works lmfao"
-        /// </summary>
-        public static NPC N => GetCurrentNPC();
 
         /// <summary>
         /// Checks if it's my SteamID
         /// </summary>
         public static bool LL => LuneL(L);
         public static bool LE => LuneE(L);
-
-        public static bool LLL => LuneL(LP);
 
         public static bool ZoneOcean => L.ZoneBeach;
 
@@ -133,6 +74,7 @@ namespace LuneLib.Utilities
                 messageBackground.SetData(new[] { Color.White });
             }
         }
+
         /// <summary>
         /// Shows a message on your screen.
         /// </summary>
@@ -172,57 +114,7 @@ namespace LuneLib.Utilities
 
         public static LocalizedText GetText(string key)
         {
-            return Language.GetOrRegister("Mods.LuneLib." + key);
-        }
-
-        public static Vector2 MaxVector2(Vector2 vec1, Vector2 vec2)
-        {
-            if (vec1.X > vec2.X)
-            {
-                return vec1;
-            }
-            else if (vec1.X < vec2.X)
-            {
-                return vec2;
-            }
-            else
-            {
-                if (vec1.Y > vec2.Y)
-                {
-                    return vec1;
-                }
-                else
-                {
-                    return vec2;
-                }
-            }
-        }
-        public static NPC GetCurrentNPC()
-        {
-            foreach (var npc in Main.npc)
-            {
-                if (npc.active)
-                {
-                    return npc;
-                }
-            }
-            return null;
-        }
-        public static Item GetCurrentItem()
-        {
-            foreach (var item in Main.item)
-            {
-                return item;
-            }
-            return null;
-        }
-        public static int TilesToPixels(int tiles)
-        {
-            return tiles * 16;
-        }
-        public static int SecondsToFramesL(int seconds)
-        {
-            return seconds * 60;
+            return Language.GetOrRegister($"Mods.LuneLib.{key}");
         }
 
         #endregion
@@ -236,33 +128,24 @@ namespace LuneLib.Utilities
         public static bool LuneL(this Player player)
         {
             if (steamID.ToString() == "76561198818748376" && debug.LL && player.whoAmI == Main.myPlayer && !debug.TestMode)
-            {
                 return true;
-            }
             else if (player.name == "fish" && debug.LL && player.whoAmI == Main.myPlayer && debug.TestMode)
-            {
                 return true;
-            }
             return false;
         }
         #endregion
 
         #region LE
         /// <summary>
-        /// Checks if it's my friends SteamID
+        /// Checks if it's a past artists SteamID
         /// </summary>
         /// <param name="player"></param>
         /// <returns></returns>
-        public static bool LuneE(this Player player)
-        {
-            return steamID.ToString() == "76561198348118589" && debug.LL && player.whoAmI == Main.myPlayer;
-        }
+        public static bool LuneE(this Player player) => steamID.ToString() == "76561198348118589" && debug.LL && player.whoAmI == Main.myPlayer;
         #endregion
 
         #region player
         public static LibPlayer LibPlayer(this Player player) => player.GetModPlayer<LibPlayer>();
-        public static PlayerEyeHelper EyePlayer(this PlayerEyeHelper eyePlayer) => eyePlayer;
-        public static Player VanillaPlayer(this Player VL) => VL;
         #endregion
 
         #region npc
@@ -272,14 +155,13 @@ namespace LuneLib.Utilities
         #region checks
         public static bool OceanMan(this Player player) => Collision.DrownCollision(player.position, player.width, player.height, player.gravDir);
 
-        public static bool LInSpace(this Player player)
-        {
-            float num = Main.maxTilesX / 4200f;
-            num *= num;
-            return (float)((double)(player.position.Y / 16f - (60f + 10f * num)) / (Main.worldSurface / 6.0)) < 1f;
-        }
-
         #endregion
+        public static float ToPercentage(float value)
+        {
+            if (value < 0f) value = 0f;
+            if (value > 100f) value = 100f;
+            return value / 100f;
+        }
 
         #region LuneProgress
 
@@ -290,44 +172,19 @@ namespace LuneLib.Utilities
         [JITWhenModsEnabled("CalamityMod")]
         public static int LuneProgress()
         {
-            if (DownedBossSystem.downedPrimordialWyrm)
-            {
-                return 9;
-            }
-            else if (DownedBossSystem.downedCalamitas)
-            {
-                return 8;
-            }
-            else if (DownedBossSystem.downedPolterghast)
-            {
-                return 7;
-            }
-            else if (DownedBossSystem.downedLeviathan)
-            {
-                return 6;
-            }
-            else if (DownedBossSystem.downedCalamitasClone)
-            {
-                return 5;
-            }
-            else if (DownedBossSystem.downedAquaticScourge)
-            {
-                return 4;
-            }
-            else if (DownedBossSystem.downedCLAMHardMode)
-            {
-                return 3;
-            }
-            else if (DownedBossSystem.downedCLAM)
-            {
-                return 2;
-            }
-            else if (DownedBossSystem.downedDesertScourge)
-            {
-                return 1;
-            }
-            return 0;
+            int progress = 
+            DownedBossSystem.downedPrimordialWyrm ? 9 :
+            DownedBossSystem.downedCalamitas ? 8 :
+            DownedBossSystem.downedPolterghast ? 7 :
+            DownedBossSystem.downedLeviathan ? 6 :
+            DownedBossSystem.downedCalamitasClone ? 5 :
+            DownedBossSystem.downedAquaticScourge ? 4 :
+            DownedBossSystem.downedCLAMHardMode ? 3 :
+            DownedBossSystem.downedCLAM ? 2 :
+            DownedBossSystem.downedDesertScourge ? 1 : 0;
+            return progress;
         }
+
 
         /// <summary>
         /// dry worm Defeat
@@ -383,37 +240,6 @@ namespace LuneLib.Utilities
         [JITWhenModsEnabled("CalamityMod")]
         public static bool C9 => LuneProgress() == 9;
 
-
-        #endregion
-
-        #region Loading
-
-        public static bool NoCalLoading()
-        {
-            if (instance.CalamityModLoaded)
-            {
-                return true;
-            }
-            return false;
-        }
-
-        public static bool NoCalEXLoading()
-        {
-            if (instance.CalValExLoaded)
-            {
-                return true;
-            }
-            return false;
-        }
-
-        public static bool NoInfLoading()
-        {
-            if (instance.InfernumModeLoaded)
-            {
-                return true;
-            }
-            return false;
-        }
 
         #endregion
 

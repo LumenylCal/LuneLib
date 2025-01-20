@@ -8,12 +8,6 @@ namespace LuneLib.Common.NPCs.LuneLibNpc
 
         #region all my mods debuffs
 
-        #region Lunes Worse of Life
-
-        //public int BoilFreeze = 0;
-
-        #endregion
-
         #region Calamitas Mommy (Lunes Shitty Mod) this mod is currently private... its just changes id like to my game
 
         public int LcDepth = 0;
@@ -22,14 +16,5 @@ namespace LuneLib.Common.NPCs.LuneLibNpc
         #endregion
 
         #endregion
-
-        //public override void PostAI(NPC npc)
-        //{
-        //    if (BoilFreeze > 0)
-        //        BoilFreeze--;
-
-        //    if (LcDepth > 0)
-        //        LcDepth--;
-        //}
     }
 }

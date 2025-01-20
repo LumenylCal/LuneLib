@@ -1,19 +1,19 @@
 ﻿using System.Collections.Generic;
 using Terraria.ModLoader;
 
-namespace LuneLib.Utilities.Hashsets
+namespace LuneLib.Utilities.Hashsets.Calamity
 {
     [JITWhenModsEnabled("CalamitasMommy")]
     public static class CalMSets
     {
-        private static int tenebrisTileID;
+        private static readonly int tenebrisTileID;
 
         public static readonly HashSet<int> IsAquaticTile;
         static CalMSets()
         {
 
             var isCalMLoaded = ModLoader.HasMod("CalamitasMommy");
-            IsAquaticTile = isCalMLoaded ? CreateCalMTileSpecificTypes() : new HashSet<int>();
+            IsAquaticTile = isCalMLoaded ? CreateCalMTileSpecificTypes() : [];
 
             if (ModLoader.TryGetMod("CalamitasMommy", out Mod calamitasmommy))
             {
@@ -21,15 +21,12 @@ namespace LuneLib.Utilities.Hashsets
             }
         }
 
-        private static HashSet<int> CreateCalMTileSpecificTypes()
-        {
-            return new HashSet<int>
-            {
+        private static HashSet<int> CreateCalMTileSpecificTypes() =>
+        [
 
-                tenebrisTileID,
+            tenebrisTileID,
 
-            };
-        }
+        ];
 
     }
 }

@@ -8,7 +8,6 @@
 	</PropertyGroup>
 
 	<ItemGroup>
-	  <None Remove="Assets\Images\Buffs\Lune.png" />
 	  <None Remove="Assets\Images\LPet.png" />
 	  <None Remove="Content\LunePet\LunesOceanSpiritBuff.png" />
 	  <None Remove="Content\LunePet\LunesOceanSpiritPROJ.png" />

@@ -1,5 +1,5 @@
-using LuneLib.Common.Buffs;
 using LuneLib.Common.Config;
+using LuneLib.Common.Players.LuneLibPlayer;
 using Steamworks;
 using System;
 using Terraria;
@@ -16,17 +16,19 @@ namespace LuneLib
         public static Debug debug;
         public static Client clientConfig;
 
-        public bool CalamityModLoaded;
-        public bool InfernumModeLoaded;
-        public bool CalValExLoaded;
-        public bool CalamitasMommyLoaded;
-        public bool ThoriumModLoaded;
-        public bool VanillaQoLLoaded;
-        public bool SpiritModLoaded;
-        public bool StrongerReforgesLoaded;
-        public bool BrighterLightLoaded;
-        public bool CoyoteframesLoaded;
-        public bool DarkSurfaceLoaded;
+        public bool
+            CalamityModLoaded,
+            InfernumModeLoaded,
+            CalValExLoaded,
+            CalamitasMommyLoaded,
+            ThoriumModLoaded, 
+            VanillaQoLLoaded,
+            SpiritModLoaded,
+            StrongerReforgesLoaded,
+            BrighterLightLoaded,
+            CoyoteframesLoaded,
+            ChatSourceLoaded,
+            DarkSurfaceLoaded;
 
         public static CSteamID steamID;
 
@@ -46,6 +48,7 @@ namespace LuneLib
             StrongerReforgesLoaded = ModLoader.HasMod("StrongerReforges");
             BrighterLightLoaded = ModLoader.HasMod("BrighterLight");
             CoyoteframesLoaded = ModLoader.HasMod("Coyoteframes");
+            ChatSourceLoaded = ModLoader.HasMod("ChatSource");
             DarkSurfaceLoaded = ModLoader.HasMod("DarkSurface");
 
             On_PlayerEyeHelper.SetStateByPlayerInfo += PlayerEyeHelper_SetStateByPlayerInfo;
@@ -62,7 +65,7 @@ namespace LuneLib
         {
             orig(ref self, player);
 
-            if (debug.LL && player.HasBuff<Lune>())
+            if (debug.LL && player.GetModPlayer<LibPlayer>().IsLune)
             {
                 try
                 {
@@ -77,7 +80,7 @@ namespace LuneLib
                 }
                 catch (Exception e)
                 {
-                    Logger.Error($"Aw shit here we go again. reflect: {e.Message}");
+                    Logger.Error($"(Tell Lune. She needs the message (if shes alive)) Aw shit here we go again. error_ref: {e.Message}");
                 }
             }
         }

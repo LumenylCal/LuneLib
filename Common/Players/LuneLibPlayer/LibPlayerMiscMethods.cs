@@ -1,6 +1,8 @@
-﻿using SpiritMod.Items.Armor.AstronautVanity;
+﻿using LuneLib.Utilities.Hashsets.Vanilla;
+using SpiritMod.Items.Armor.AstronautVanity;
 using SpiritMod.Items.BossLoot.StarplateDrops.StarArmor;
 using System;
+using System.Security.Cryptography;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
@@ -191,16 +193,24 @@ namespace LuneLib.Common.Players.LuneLibPlayer
 
         public static bool IsWearingFishBowl { get; set; }
 
-        public bool WearingFishBowl()
-        {
-            if (Player.armor[0].type == ItemID.FishBowl)
-            {
-                return true;
-            }
-            return false;
-        }
+        public bool WearingFishBowl() => Player.armor[0].type == ItemID.FishBowl;
 
         #endregion
+
+        public static bool WearingFullMetal { get; set; }
+        public static bool WearingTwoMetalPieces { get; set; }
+        public static bool WearingOneMetalPiece { get; set; }
+        public static bool WearingAnyMetal { get; set; }
+
+        public int IsWearingMetal()
+        {
+            int num = 0;
+            for (int i=0; i < 3; i++)
+            {
+                if (VanillaMetallicSets.MetallicArmourSets.Contains(Player.armor[i].type)) { num++; }
+            }
+            return num;
+        }
 
         #region Register
 
