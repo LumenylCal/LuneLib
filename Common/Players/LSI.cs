@@ -8,7 +8,7 @@ namespace LuneLib.Common.Players
 {
     public class LSI : ModPlayer
     {
-        public override IEnumerable<Item> AddStartingItems(bool faggotcuntcunt)
+        public override IEnumerable<Item> AddStartingItems(bool shiton)
         {
             if (LL)
             {

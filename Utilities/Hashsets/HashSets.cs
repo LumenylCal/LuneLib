@@ -13,7 +13,7 @@ namespace LuneLib.Utilities.Hashsets
         #region HashSet Contains Ore Tile
 
         public static bool HashSetContainsOreTile(int type) =>
-            ContainsVanillaOreTile(type) || ContainsCalOreTile(type) || 
+            ContainsVanillaOreTile(type) || ContainsCalOreTile(type) ||
             ContainsSpiritOreTile(type) || ContainsThorOreTile(type);
 
         public static bool ContainsVanillaOreTile(int type) =>

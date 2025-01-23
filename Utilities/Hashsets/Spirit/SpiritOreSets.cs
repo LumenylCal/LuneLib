@@ -1,6 +1,4 @@
-﻿using CalamityMod.Tiles.Ores;
-using CalamityMod.Tiles.SunkenSea;
-using SpiritMod.Items.BossLoot.StarplateDrops;
+﻿using SpiritMod.Items.BossLoot.StarplateDrops;
 using SpiritMod.Items.Sets.BismiteSet;
 using SpiritMod.Items.Sets.CryoliteSet;
 using SpiritMod.Items.Sets.FloranSet;

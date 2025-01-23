@@ -38,7 +38,7 @@ namespace LuneLib.Utilities.Hashsets
 
         #region Abyssal Projectiles
 
-        private static HashSet<int> CreateInfCalProjSpecificTypes() => 
+        private static HashSet<int> CreateInfCalProjSpecificTypes() =>
         [
 
             #region InfernumMode Projectiles
@@ -91,7 +91,7 @@ namespace LuneLib.Utilities.Hashsets
 
         #region Abyssal Npcs
 
-        private static HashSet<int> CreateInfCalNpcSpecificTypes() => 
+        private static HashSet<int> CreateInfCalNpcSpecificTypes() =>
         [
 
             #region InfernumMode NPCs
@@ -110,7 +110,7 @@ namespace LuneLib.Utilities.Hashsets
 
         #region Aquatic Boss Projectiles
 
-        private static HashSet<int> CreateInfCalBossProjSpecificTypes() => 
+        private static HashSet<int> CreateInfCalBossProjSpecificTypes() =>
         [
 
             #region Anahita

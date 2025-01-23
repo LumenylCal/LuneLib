@@ -46,7 +46,7 @@ namespace LuneLib.Content.LunePet
             Projectile.netUpdate = true;
             FollowMouse();
 
-            if (LuneLib.clientConfig.DebugMessages)
+            if (LuneLib.clientConfig.DebugMessages && sleepyTimer > 30)
             {
                 Main.NewText($"Sleepy? {sleepy}, Asleep? {asleep}, LightLevel? {lightLevel}, SleepyTimer? {sleepyTimer}, Left {isItLeft}, Right {isItRight}");
             }

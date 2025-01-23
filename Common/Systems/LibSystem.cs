@@ -114,5 +114,4 @@ namespace LuneLib.Common.Systems
             }
         }
     }
-
 }

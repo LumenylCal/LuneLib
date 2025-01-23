@@ -1,6 +1,7 @@
 ﻿using LuneLib.Common.Players.LuneLibPlayer;
 using LuneLib.Utilities;
 using Microsoft.Xna.Framework;
+using SpiritMod.GlobalClasses.Players;
 using Terraria;
 using Terraria.ModLoader;
 
@@ -84,8 +85,7 @@ namespace LuneLib.Content.LunePet
                     Projectile.frame = 0;
                 }
             }
-
-            if (!asleep && sleepy)
+            else if (!asleep && sleepy)
             {
                 if (Projectile.frame >= 16)
                 {
@@ -97,13 +97,11 @@ namespace LuneLib.Content.LunePet
             {
                 lightLevel = 0;
             }
-
-            if (sleepy && !asleep)
+            else if (sleepy && !asleep)
             {
                 lightLevel = 1;
             }
-
-            if (asleep)
+            else if (asleep)
             {
                 lightLevel = 2;
                 Projectile.frame = 16;
@@ -128,27 +126,16 @@ namespace LuneLib.Content.LunePet
             Vector2 playerVec = player.Center - Projectile.Center;
             playerVec.Y += player.gfxOffY;
             playerVec.Y -= 60f;
-            bool left = false;
-            bool right = false;
+            bool Looking = player.direction == 1;
 
-            if (player.direction == 1)
-            {
-                right = true;
-            }
-            if (player.direction == -1)
-            {
-                left = true;
-            }
 
-            if (Projectile.velocity.X == 0f && left)
+            if (Projectile.velocity.X == 0f && !Looking)
             {
                 Projectile.direction = -1;
-                right = false;
             }
-            else if (Projectile.velocity.X == 0f && right)
+            else if (Projectile.velocity.X == 0f && Looking)
             {
                 Projectile.direction = 1;
-                left = false;
             }
 
             Projectile.spriteDirection = Projectile.direction;

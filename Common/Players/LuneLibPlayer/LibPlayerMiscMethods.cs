@@ -2,7 +2,6 @@
 using SpiritMod.Items.Armor.AstronautVanity;
 using SpiritMod.Items.BossLoot.StarplateDrops.StarArmor;
 using System;
-using System.Security.Cryptography;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
@@ -205,7 +204,7 @@ namespace LuneLib.Common.Players.LuneLibPlayer
         public int IsWearingMetal()
         {
             int num = 0;
-            for (int i=0; i < 3; i++)
+            for (int i = 0; i < 3; i++)
             {
                 if (VanillaMetallicSets.MetallicArmourSets.Contains(Player.armor[i].type)) { num++; }
             }

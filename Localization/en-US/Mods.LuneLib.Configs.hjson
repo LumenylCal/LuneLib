@@ -7,16 +7,6 @@ Debug: {
 		Tooltip: most likely wont do anything for you
 	}
 
-	TargetDistanceAirShare: {
-		Label: TDAS
-		Tooltip: most likely wont do anything for you
-	}
-
-	DebugMessages: {
-		Label: Debug Messages
-		Tooltip: Debug Messages
-	}
-
 	LL: {
 		Label: LL
 		Tooltip: most likely wont do anything for you
@@ -41,24 +31,19 @@ Debug: {
 		Label: Lunes Pet
 		Tooltip: ""
 	}
-
-	Days: {
-		Label: Days
-		Tooltip: Shows a sick ass message at the start of days
-	}
 }
 
 Client: {
 	Days: {
-		Tooltip: ""
 		Label: Days
+		Tooltip: Shows a sick ass message at the start of every day
 	}
 
 	DebugMessages: {
-		Tooltip: ""
 		Label: Debug Messages
+		Tooltip: Debug Messages
 	}
 
-	Headers.Spammy: Spammy Header
+	Headers.Spammy: Spammy
 	DisplayName: Client
 }

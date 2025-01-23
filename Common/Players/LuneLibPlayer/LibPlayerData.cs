@@ -16,7 +16,6 @@ namespace LuneLib.Common.Players.LuneLibPlayer
         public bool Chilly = false; //in tundra
         public bool LeadPoison = false; // weaing lead armour
         public bool CrimtuptionzoneNight = false; // In crimtuption during night
-        public bool NightChild = false; // Nighty night. no longer in use
         public bool HeatStroke = false; // heat stroking my dick i got lotion on my dick man im a freak though for real
         public bool depthwaterPressure = false; // owie not the billionare sub!!1
         public bool LWaterEyes = false; // used for darker waters
@@ -52,7 +51,6 @@ namespace LuneLib.Common.Players.LuneLibPlayer
             LeadPoison = false;
             CrimtuptionzoneNight = false;
             Chilly = false;
-            NightChild = false;
             HeatStroke = false;
             depthwaterPressure = false;
             LWaterEyes = false;

@@ -21,7 +21,7 @@ namespace LuneLib
             InfernumModeLoaded,
             CalValExLoaded,
             CalamitasMommyLoaded,
-            ThoriumModLoaded, 
+            ThoriumModLoaded,
             VanillaQoLLoaded,
             SpiritModLoaded,
             StrongerReforgesLoaded,

@@ -6,6 +6,8 @@ using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using ReLogic.Graphics;
 using System;
+using System.Collections.Generic;
+using System.Diagnostics;
 using Terraria;
 using Terraria.GameContent;
 using Terraria.Localization;
@@ -65,6 +67,28 @@ namespace LuneLib.Utilities
         #endregion
 
         #region help
+        public static readonly Dictionary<int, Stopwatch> timers = [];
+
+        public static bool Wait(int milliseconds)
+        {
+            if (!timers.ContainsKey(milliseconds))
+            {
+                timers[milliseconds] = new Stopwatch();
+                timers[milliseconds].Start();
+            }
+
+            var stopwatch = timers[milliseconds];
+
+            if (stopwatch.ElapsedMilliseconds >= milliseconds)
+            {
+                stopwatch.Restart();
+                return true;
+            }
+
+            return false;
+        }
+
+
 
         private static void MessageBackground()
         {
@@ -172,7 +196,7 @@ namespace LuneLib.Utilities
         [JITWhenModsEnabled("CalamityMod")]
         public static int LuneProgress()
         {
-            int progress = 
+            int progress =
             DownedBossSystem.downedPrimordialWyrm ? 9 :
             DownedBossSystem.downedCalamitas ? 8 :
             DownedBossSystem.downedPolterghast ? 7 :
