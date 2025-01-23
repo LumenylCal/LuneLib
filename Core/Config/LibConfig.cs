@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel;
 using Terraria.ModLoader.Config;
 
-namespace LuneLib.Common.Config
+namespace LuneLib.Core.Config
 {
     public class Debug : ModConfig
     {

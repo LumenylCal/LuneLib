@@ -19,7 +19,8 @@ namespace LuneLib.Common.Systems
             day6StartTimer = 0,
             reset1Timer = 0,
             reset2StartTimer = 0,
-            reset2Timer = 0;
+            reset2Timer = 0,
+            reset1pos = 325;
 
         private bool
             wasDay = false,
@@ -41,6 +42,7 @@ namespace LuneLib.Common.Systems
                 reset1Timer = 0;
                 reset2StartTimer = 0;
                 reset2Timer = 0;
+                reset1pos = 325;
             }
 
             wasDay = isDay;
@@ -72,11 +74,14 @@ namespace LuneLib.Common.Systems
                         Language.GetTextValue($"Mods.LuneLib.Messages.Chat.Isle.Day{dayCount}"),
                         1.5f, 300, 255, 255, 0, 0
                     );
-                    ScreenMessage
-                    (
-                        Language.GetTextValue("Mods.LuneLib.Messages.Chat.Isle.SHUTUPPPPP"),
-                        0.75f, 350, 165, 0, 35, 0
-                    );
+                    if (LuneLib.clientConfig.dayshelptext)
+                    {
+                        ScreenMessage
+                        (
+                            Language.GetTextValue("Mods.LuneLib.Messages.Chat.Isle.SHUTUPPPPP"),
+                            0.75f, 350, 165, 0, 35, 0
+                        ); 
+                    }
                 }
             }
 
@@ -91,7 +96,7 @@ namespace LuneLib.Common.Systems
                     ScreenMessage
                     (
                         Language.GetTextValue("Mods.LuneLib.Messages.Chat.Isle.TheReset1"),
-                        1.5f, 325, 7, 242, 242, 0
+                        1.5f, reset1pos, 7, 242, 242, 0
                     );
                     reset1Timer++;
                     day6StartTimerDone = true;
@@ -102,13 +107,23 @@ namespace LuneLib.Common.Systems
                     reset2StartTimer++;
                 }
 
+                if (reset2StartTimer >= 260 && reset2Timer <= 480)
+                {
+                    if (reset1pos < 290)
+                    { reset1pos = 290; }
+                    reset1pos--;
+                }
+
                 if (reset2StartTimer >= 300 && reset2Timer <= 480)
                 {
                     ScreenMessage
                     (
                         Language.GetTextValue("Mods.LuneLib.Messages.Chat.Isle.TheReset2"),
-                        1.5f, 360, 7, 242, 242, 0
+                        1.5f, 325, 7, 242, 242, 0
                     );
+                    if (reset1pos < 290)
+                    { reset1pos = 290; }
+                    reset1pos--;
                     reset2Timer++;
                 }
             }

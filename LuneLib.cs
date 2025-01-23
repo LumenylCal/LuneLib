@@ -1,5 +1,5 @@
-using LuneLib.Common.Config;
 using LuneLib.Common.Players.LuneLibPlayer;
+using LuneLib.Core.Config;
 using Steamworks;
 using System;
 using Terraria;
@@ -51,7 +51,9 @@ namespace LuneLib
             ChatSourceLoaded = ModLoader.HasMod("ChatSource");
             DarkSurfaceLoaded = ModLoader.HasMod("DarkSurface");
 
-            On_PlayerEyeHelper.SetStateByPlayerInfo += PlayerEyeHelper_SetStateByPlayerInfo;
+            if (LL)
+            { On_PlayerEyeHelper.SetStateByPlayerInfo += PlayerEyeHelper_SetStateByPlayerInfo; }
+
         }
 
         public override void Unload()

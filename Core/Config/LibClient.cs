@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel;
 using Terraria.ModLoader.Config;
 
-namespace LuneLib.Common.Config
+namespace LuneLib.Core.Config
 {
     public class Client : ModConfig
     {
@@ -12,6 +12,9 @@ namespace LuneLib.Common.Config
         [DefaultValue(false)]
         public bool DebugMessages { get; set; }
 
+        [DefaultValue(true)]
+        public bool dayshelptext { get; set; }
+        
         [DefaultValue(true)]
         public bool Days { get; set; }
 
