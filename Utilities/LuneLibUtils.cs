@@ -88,6 +88,51 @@ namespace LuneLib.Utilities
             return false;
         }
 
+        public static readonly Dictionary<string, Stopwatch> timersnmd = [];
+
+        public static bool WaitNamed(string name, int milliseconds)
+        {
+            if (!timersnmd.ContainsKey(name))
+            {
+                timersnmd[name] = new Stopwatch();
+                timersnmd[name].Start();
+            }
+
+            var stopwatch = timersnmd[name];
+
+            if (stopwatch.ElapsedMilliseconds >= milliseconds)
+            {
+                if (stopwatch.IsRunning)
+                {
+                    stopwatch.Stop();
+                }
+                return true;
+            }
+
+            return false;
+        }
+        public static void ResetTimer(string name)
+        {
+            if (timersnmd.ContainsKey(name))
+            {
+                timersnmd[name].Restart();
+            }
+        }
+
+        public static int TimeLeftNamed(string name, int milliseconds)
+        {
+            if (!timersnmd.ContainsKey(name))
+            {
+                return milliseconds;
+            }
+            var stopwatch = timersnmd[name];
+            if (!stopwatch.IsRunning)
+            {
+                return 0;
+            }
+            int elapsed = (int)stopwatch.ElapsedMilliseconds;
+            return Math.Max(0, milliseconds - elapsed);
+        }
 
 
         private static void MessageBackground()
@@ -180,93 +225,12 @@ namespace LuneLib.Utilities
         public static bool OceanMan(this Player player) => Collision.DrownCollision(player.position, player.width, player.height, player.gravDir);
 
         #endregion
-        public static float ToPercentage(float value)
+        public static float ToPercentage(int value)
         {
-            if (value < 0f) value = 0f;
-            if (value > 100f) value = 100f;
-            return value / 100f;
+            if (value < 0) value = 0;
+            if (value > 100) value = 100;
+            return value / 100;
         }
-
-        #region LuneProgress
-
-        /// <summary>
-        /// downed boss bool
-        /// </summary>
-        /// <returns>downed boss bool</returns>
-        [JITWhenModsEnabled("CalamityMod")]
-        public static int LuneProgress()
-        {
-            int progress =
-            DownedBossSystem.downedPrimordialWyrm ? 9 :
-            DownedBossSystem.downedCalamitas ? 8 :
-            DownedBossSystem.downedPolterghast ? 7 :
-            DownedBossSystem.downedLeviathan ? 6 :
-            DownedBossSystem.downedCalamitasClone ? 5 :
-            DownedBossSystem.downedAquaticScourge ? 4 :
-            DownedBossSystem.downedCLAMHardMode ? 3 :
-            DownedBossSystem.downedCLAM ? 2 :
-            DownedBossSystem.downedDesertScourge ? 1 : 0;
-            return progress;
-        }
-
-
-        /// <summary>
-        /// dry worm Defeat
-        /// </summary>
-        [JITWhenModsEnabled("CalamityMod")]
-        public static bool C1 => LuneProgress() == 1;
-
-        /// <summary>
-        /// big Clam Defeat
-        /// </summary>
-        [JITWhenModsEnabled("CalamityMod")]
-        public static bool C2 => LuneProgress() == 2;
-
-        /// <summary>
-        /// big Clam but harder Defeat
-        /// </summary>
-        [JITWhenModsEnabled("CalamityMod")]
-        public static bool C3 => LuneProgress() == 3;
-
-        /// <summary>
-        /// wet worm Defeat
-        /// </summary>
-        [JITWhenModsEnabled("CalamityMod")]
-        public static bool C4 => LuneProgress() == 4;
-
-        /// <summary>
-        /// Fake Mommy Defeat
-        /// </summary>
-        [JITWhenModsEnabled("CalamityMod")]
-        public static bool C5 => LuneProgress() == 5;
-
-        /// <summary>
-        /// Levi And Fish Waifu Defeat
-        /// </summary>
-        [JITWhenModsEnabled("CalamityMod")]
-        public static bool C6 => LuneProgress() == 6;
-
-        /// <summary>
-        ///  PolterGhast Defeat
-        /// </summary>
-        [JITWhenModsEnabled("CalamityMod")]
-        public static bool C7 => LuneProgress() == 7;
-
-        /// <summary>
-        /// Mommy Defeat
-        /// </summary>
-        [JITWhenModsEnabled("CalamityMod")]
-        public static bool C8 => LuneProgress() == 8;
-
-        /// <summary>
-        /// Adult Eidolon Wyrm Defeat
-        /// </summary>
-        [JITWhenModsEnabled("CalamityMod")]
-        public static bool C9 => LuneProgress() == 9;
-
-
-        #endregion
-
         public static void FuckingShit(string message)
         {
             if (clientConfig.DebugMessages)

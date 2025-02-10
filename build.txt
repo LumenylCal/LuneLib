@@ -1,6 +1,6 @@
 displayName = LuneLib
 author = Lune
-version = 1.5.8
+version = 1.5.9
 weakReferences = CalamityMod, InfernumMode, CalValEX, ThoriumMod, SpiritMod
 hideCode = false
 hideResources = false
