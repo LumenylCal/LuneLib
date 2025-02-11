@@ -17,12 +17,6 @@ namespace LuneLib.Common.Players.LuneLibPlayer
             {
                 Main.buffNoTimeDisplay[ModContent.BuffType<LPetBuff>()] = true;
                 Player.AddBuff(ModContent.BuffType<LPetBuff>(), 15);
-
-                IsLune = true;
-            }
-            else
-            {
-                IsLune = false;
             }
         }
 

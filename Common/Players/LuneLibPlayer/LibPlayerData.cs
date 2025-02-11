@@ -4,9 +4,6 @@ namespace LuneLib.Common.Players.LuneLibPlayer
 {
     public partial class LibPlayer : ModPlayer
     {
-
-        public bool IsLune = false;
-
         #region All My Mods stuff
 
         #region Lunes Worse of Life
@@ -55,7 +52,6 @@ namespace LuneLib.Common.Players.LuneLibPlayer
             depthwaterPressure = false;
             LWaterEyes = false;
             LStormEyeCovered = false;
-            IsLune = false;
 
             currentDepthPressure = 0;
 

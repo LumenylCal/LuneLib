@@ -1,4 +1,5 @@
 using LuneLib.Common.Players.LuneLibPlayer;
+using LuneLib.Content.LunePet;
 using LuneLib.Core.Config;
 using Steamworks;
 using System;
@@ -35,9 +36,7 @@ namespace LuneLib
         public override void Load()
         {
             instance = this;
-
             steamID = SteamUser.GetSteamID();
-
             CalamityModLoaded = ModLoader.HasMod("CalamityMod");
             InfernumModeLoaded = ModLoader.HasMod("InfernumMode");
             CalValExLoaded = ModLoader.HasMod("CalValEx");
@@ -50,10 +49,8 @@ namespace LuneLib
             CoyoteframesLoaded = ModLoader.HasMod("Coyoteframes");
             ChatSourceLoaded = ModLoader.HasMod("ChatSource");
             DarkSurfaceLoaded = ModLoader.HasMod("DarkSurface");
-
-            if (LL)
+            if (debug.LL)
             { On_PlayerEyeHelper.SetStateByPlayerInfo += PlayerEyeHelper_SetStateByPlayerInfo; }
-
         }
 
         public override void Unload()
@@ -67,7 +64,7 @@ namespace LuneLib
         {
             orig(ref self, player);
 
-            if (debug.LL && player.GetModPlayer<LibPlayer>().IsLune)
+            if (debug.LL && LL)
             {
                 try
                 {
