@@ -28,8 +28,8 @@ Debug: {
 	}
 
 	LunesPet: {
-		Label: Lunes Pet
 		Tooltip: ""
+		Label: Lunes Pet
 	}
 }
 
@@ -51,4 +51,14 @@ Client: {
 
 	Headers.Spammy: Spammy
 	DisplayName: Client
+}
+
+Server: {
+	FreddyFiveBear: {
+		Tooltip: ""
+		Label: Freddy Five Bear
+	}
+
+	Headers.Spammy: Spammy Header
+	DisplayName: Server
 }

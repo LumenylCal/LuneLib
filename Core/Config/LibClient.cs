@@ -14,7 +14,7 @@ namespace LuneLib.Core.Config
 
         [DefaultValue(true)]
         public bool dayshelptext { get; set; }
-        
+
         [DefaultValue(true)]
         public bool Days { get; set; }
 

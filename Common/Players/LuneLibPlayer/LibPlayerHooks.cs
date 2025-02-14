@@ -1,5 +1,4 @@
-﻿using LuneLib.Content.LunePet;
-using LuneLib.Utilities;
+﻿using LuneLib.Utilities;
 using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.GameContent.Events;
@@ -10,16 +9,6 @@ namespace LuneLib.Common.Players.LuneLibPlayer
 {
     public partial class LibPlayer : ModPlayer
     {
-
-        public override void PreUpdateBuffs()
-        {
-            if (LL)
-            {
-                Main.buffNoTimeDisplay[ModContent.BuffType<LPetBuff>()] = true;
-                Player.AddBuff(ModContent.BuffType<LPetBuff>(), 15);
-            }
-        }
-
         #region HeadCovered
 
         public override void PostUpdate()

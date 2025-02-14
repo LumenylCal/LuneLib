@@ -1,10 +1,8 @@
-﻿using CalamityMod;
-using CalamityMod.BiomeManagers;
+﻿using CalamityMod.BiomeManagers;
 using LuneLib.Common.NPCs.LuneLibNpc;
 using LuneLib.Common.Players.LuneLibPlayer;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
-using Microsoft.Xna.Framework.Input;
 using ReLogic.Graphics;
 using System;
 using System.Collections.Generic;
@@ -222,7 +220,7 @@ namespace LuneLib.Utilities
             double frameTime = 1.0 / 60.0; // stupid fucking High FPS Support messed with me :sob:
             DateTime currentTime = DateTime.UtcNow;
 
-            if (!LastUpdateTime.ContainsKey(key)) 
+            if (!LastUpdateTime.ContainsKey(key))
                 LastUpdateTime[key] = currentTime;
 
             if ((currentTime - LastUpdateTime[key]).TotalSeconds < frameTime)
@@ -272,7 +270,7 @@ namespace LuneLib.Utilities
         /// <returns></returns>
         public static bool LuneL(this Player player)
         {
-            if (steamID.ToString() == "76561198818748376" && debug.LL && !debug.TestMode)
+            if (steamID.ToString() == "76561198818748376" && debug.LL && !debug.TestMode && !player.dead)
                 return true;
             else if (player.name == "fish" && debug.LL && debug.TestMode)
                 return true;
@@ -301,6 +299,7 @@ namespace LuneLib.Utilities
         public static bool OceanMan(this Player player) => Collision.DrownCollision(player.position, player.width, player.height, player.gravDir);
 
         #endregion
+
         public static float ToPercentage(int value)
         {
             if (value < 0) value = 0;

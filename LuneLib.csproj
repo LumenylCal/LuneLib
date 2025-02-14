@@ -1,24 +1,9 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
-
 	<Import Project="..\tModLoader.targets" />
-
 	<PropertyGroup>
 		<AssemblyName>LuneLib</AssemblyName>
 		<LangVersion>latest</LangVersion>
 	</PropertyGroup>
-
-	<ItemGroup>
-	  <None Remove="Assets\Images\LPet.png" />
-	  <None Remove="Content\LunePet\LunesOceanSpiritBuff.png" />
-	  <None Remove="Content\LunePet\LunesOceanSpiritPROJ.png" />
-	  <None Remove="Content\LunePet\StrangeOrb.png" />
-	  <None Remove="Localization\en-US\Mods.LuneLib.Buffs.hjson" />
-	  <None Remove="Localization\en-US\Mods.LuneLib.Items.hjson" />
-	  <None Remove="Localization\en-US\Mods.LuneLib.Messages.Chat.Isle.hjson" />
-	  <None Remove="Localization\en-US\Mods.LuneLib.Projectiles.hjson" />
-	  <None Remove="localization\Mods.LuneLib.Status.Death.hjson" />
-	</ItemGroup>
-
 	<ItemGroup>
 		<Reference Include="CalValEX">
 			<HintPath>..\..\ModReader\CalValEX\CalValEX.dll</HintPath>
@@ -36,5 +21,4 @@
 			<HintPath>..\..\ModReader\ThoriumMod\ThoriumMod.dll</HintPath>
 		</Reference>
 	</ItemGroup>
-	
 </Project>

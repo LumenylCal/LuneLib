@@ -1,5 +1,3 @@
-using LuneLib.Common.Players.LuneLibPlayer;
-using LuneLib.Content.LunePet;
 using LuneLib.Core.Config;
 using Steamworks;
 using System;
@@ -16,8 +14,10 @@ namespace LuneLib
         public static LuneLib instance;
         public static Debug debug;
         public static Client clientConfig;
+        public static Server serverConfig;
 
         public bool
+            LuneLibAssetsLoaded,
             CalamityModLoaded,
             InfernumModeLoaded,
             CalValExLoaded,
@@ -37,6 +37,7 @@ namespace LuneLib
         {
             instance = this;
             steamID = SteamUser.GetSteamID();
+            LuneLibAssetsLoaded = ModLoader.HasMod("LuneLibAssets");
             CalamityModLoaded = ModLoader.HasMod("CalamityMod");
             InfernumModeLoaded = ModLoader.HasMod("InfernumMode");
             CalValExLoaded = ModLoader.HasMod("CalValEx");
@@ -58,6 +59,7 @@ namespace LuneLib
             instance = null;
             debug = null;
             clientConfig = null;
+            serverConfig = null;
         }
 
         private void PlayerEyeHelper_SetStateByPlayerInfo(On_PlayerEyeHelper.orig_SetStateByPlayerInfo orig, ref PlayerEyeHelper self, Player player)
